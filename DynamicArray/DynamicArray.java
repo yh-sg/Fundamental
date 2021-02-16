@@ -13,6 +13,13 @@ package DynamicArray;
 
 public class DynamicArray {
     public static void main(String[] args) {
-        
+        ExDynamicArr<Integer> arr = new ExDynamicArr<Integer>(2);
+        arr.add(1);
+        arr.add(3);
+        arr.add(4);
+        arr.add(2);
+        arr.removeAt(2);
+        System.out.println(arr.indexOf(arr));
+        System.out.println(arr.toString());
     }
 }
