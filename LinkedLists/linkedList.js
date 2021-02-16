@@ -10,7 +10,7 @@
 
 /*========================================================================================================*/
 
-// peice of data - val
+// piece of data - val
 // reference to next node - next
 
 class Node{
@@ -20,3 +20,29 @@ class Node{
     }
 }
 
+class SinglyLinkedList{
+    constructor(){
+        this.head = null;
+        this.tail = null;
+        this.length = 0;
+    }
+    push = (val) => {
+        let newNode = new Node(val); //Create a new node
+        if(this.length == 0){
+            this.head = newNode
+            this.tail = newNode
+        }else{
+            this.tail.next = newNode; //new Node(val)
+            this.tail = newNode;
+        } 
+        this.length++;
+        return this;
+    } 
+}
+
+let list = new SinglyLinkedList()
+console.log(list);
+console.log(list.push(99));
+console.log(list.push(80));
+console.log(list.push(55));
+console.log(list.push(44));
