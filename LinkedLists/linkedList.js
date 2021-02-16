@@ -95,9 +95,25 @@ class SinglyLinkedList{
         this.length++
         return this
     }
-    
+
+    get = (index) => {
+        if(index<0 || index >= this.length)
+            return null
+        let counter = 0
+        let current = this.head;
+        while (counter !== index) {
+            current = current.next;
+            counter++;
+        }
+        console.log(current);
+        return current
+    }
+
 }
 
 let list = new SinglyLinkedList()
-console.log(list.unshift(77))
-console.log(list);
+list.unshift(77)
+list.push(55)
+list.push(33)
+list.push(44)
+list.push(22)
