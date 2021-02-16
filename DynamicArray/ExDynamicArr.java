@@ -44,9 +44,9 @@ public class ExDynamicArr<T> implements Iterable<T> {
 
     public void add(T elem){
         //Resizing
-        System.out.println(len);
-        System.out.println(capacity); 
-        System.out.println("******************");
+        // System.out.println(len);
+        // System.out.println(capacity); 
+        // System.out.println("******************");
         if(len+1>=capacity){
             if(capacity==0)
                 capacity=1; //Default
@@ -72,16 +72,17 @@ public class ExDynamicArr<T> implements Iterable<T> {
             else
                 new_arr[j]=arr[i];
             arr=new_arr;
-            System.out.println("====================");
-            System.out.println(capacity);
-            System.out.println(len);
+            // System.out.println("====================");
+            // System.out.println(capacity);
+            // System.out.println(len);
             capacity = --len; //minus the capacity to same len value
-            System.out.println("====================");
-            System.out.println(capacity);
-            System.out.println(len);
+            // System.out.println("====================");
+            // System.out.println(capacity);
+            // System.out.println(len);
             return data;
     }
 
+    //For object arr
     public int indexOf(Object obj){
         for(int i=0;i<len;i++){
             if(obj==null){
@@ -102,6 +103,10 @@ public class ExDynamicArr<T> implements Iterable<T> {
             return false;
         removeAt(index);
         return true;
+    }
+
+    public boolean contains(Object obj){
+        return indexOf(obj)!=-1;
     }
 
   // Iterator is still fast but not as fast as iterative for loop

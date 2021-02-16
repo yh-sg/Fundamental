@@ -50,23 +50,42 @@ class SinglyLinkedList{
     }
 
     pop = (val) => {
-        if(length===0)
+        if(this.length===0)
             return undefined
         let current = this.head;
         let newTail = current
 
         //TODO Finish pop!
-
+        while(current.next){
+            newTail = current;
+            current = current.next;
+        }
+        this.tail=newTail;
+        this.tail.next = null
         this.length--;
+        if(this.length===0){
+            this.head=null
+            this.tail=null
+        }
         return this;
+    }
+
+    shift = () => {
+        if(this.length===0)
+            return undefined
+        let shiftHead = this.head
+        this.head = this.head.next
+        // console.log(this.head)
+        this.length--
+        return shiftHead
     }
 
 }
 
 let list = new SinglyLinkedList()
-console.log(list);
-console.log(list.push(99));
-console.log(list.push(80));
-console.log(list.push(55));
-console.log(list.push(44));
-list.traverse();
+list.push(99)
+list.push(98)
+list.traverse()
+// console.log(list);
+list.shift()
+list.traverse()
