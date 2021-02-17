@@ -49,13 +49,11 @@ class SinglyLinkedList{
         }
     }
 
-    pop = (val) => {
+    pop = () => {
         if(this.length===0)
             return undefined
         let current = this.head;
         let newTail = current
-
-        //TODO Finish pop!
         while(current.next){
             newTail = current;
             current = current.next;
@@ -136,15 +134,38 @@ class SinglyLinkedList{
         return true;
     }
 
+    remove = (index) => {
+        if(index<0 || index>this.length)
+            return undefined;
+        if(index===0)
+            return this.shift()
+        if(index===this.length-1)
+            return this.pop()
+        const prevNode = this.get(index-1)
+        const removed = prevNode.next
+        prevNode.next = this.get(index+1)
+        this.length--
+        return removed
+    }
+
+    //TODO REVERSE!!!!
+    reverse = () => {
+        const temp = this.tail
+        this.head = this.tail 
+        this.tail = temp
+        const next
+        const prev
+        const node = this.head;
+    }
+
 }
 
 let list = new SinglyLinkedList()
-list.push(55)
-list.unshift(11)
-list.push(44)
-list.push(33)
-list.push(22)
-// list.get(4);
-list.insert(40,2)
-list.insert(444,0)
-console.log(list);
+list.push(2)
+list.unshift(1)
+list.push(3)
+list.push(4)
+list.push(5)
+list.insert(3.5, 3)
+console.log(list.remove(3))
+list.traverse()
