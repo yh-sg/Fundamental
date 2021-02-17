@@ -105,15 +105,46 @@ class SinglyLinkedList{
             current = current.next;
             counter++;
         }
-        console.log(current);
+        // console.log(current);
         return current
+    }
+
+    set = (val, index) =>{
+        let foundNode = this.get(index);
+        if(this.get(index)===null)
+            return false;
+        else{
+            foundNode.val = val;
+            return true;
+        }
+    }
+
+    insert = (val, index) => {
+        if(index<0 || index>this.length)
+            return false;
+        if(index===this.length)
+            return !!this.push(val);
+        if(index===0)
+            return !!this.unshift(val);
+        
+        const prevNode = this.get(index - 1);
+        const newNode = new Node();
+        newNode.val = val;
+        newNode.next = this.get(index);
+        prevNode.next = newNode;
+        this.length++
+        return true;
     }
 
 }
 
 let list = new SinglyLinkedList()
-list.unshift(77)
 list.push(55)
-list.push(33)
+list.unshift(11)
 list.push(44)
+list.push(33)
 list.push(22)
+// list.get(4);
+list.insert(40,2)
+list.insert(444,0)
+console.log(list);
