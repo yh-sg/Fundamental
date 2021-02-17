@@ -26,12 +26,30 @@ class DoubleLinkedList{
         this.length++
         return this
     }
+
+    pop = () => {
+        if(!this.head)
+            return undefined
+        const popNode = this.tail
+        if(this.length===1){
+            this.head=null
+            this.tail=null
+        }else{
+            this.tail = popNode.prev
+            this.tail.next = null
+            popNode.prev = null //sever ties 
+        }
+
+        this.length--;
+        return popNode
+    }
 }
 
 const DLL = new DoubleLinkedList()
-console.log(DLL.push(1))
-console.log(DLL.push(2))
-console.log(DLL.push(3))
-console.log(DLL.push(4))
-console.log(DLL.push(5))
+DLL.push(1)
+DLL.push(2)
+DLL.push(3)
+DLL.push(4)
+DLL.push(5)
+console.log(DLL.pop());
 console.log(DLL);
