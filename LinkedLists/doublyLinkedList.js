@@ -43,6 +43,22 @@ class DoubleLinkedList{
         this.length--;
         return popNode
     }
+
+    tarverse = () => {
+        let current = this.head
+        while(current){
+            console.log(current.val)
+            current = current.next
+        }
+    }
+
+    reverseTarverse = () => {
+        let current = this.tail
+        while(current){
+            console.log(current.val);
+            current = current.prev
+        }
+    }
 }
 
 const DLL = new DoubleLinkedList()
@@ -51,5 +67,5 @@ DLL.push(2)
 DLL.push(3)
 DLL.push(4)
 DLL.push(5)
-console.log(DLL.pop());
-console.log(DLL);
+DLL.tarverse()
+DLL.reverseTarverse()
