@@ -59,13 +59,58 @@ class DoubleLinkedList{
             current = current.prev
         }
     }
+
+    shift = () => {
+        if(this.length===0)
+            return undefined;
+        if(this.length===1){
+            this.head=null
+            this.tail=null
+        }else{
+            var shiftHead = this.head
+            this.head = shiftHead.next
+            this.head.prev = null
+            shiftHead.next = null
+        }
+        this.length--
+        return shiftHead
+    }
+
+    unshift = (val) => {
+        let newNode = new Node(val)
+        if(this.length===0){
+            this.head = newNode
+            this.tail = newNode
+        }else{
+            this.head.prev = newNode
+            newNode.next = this.head
+            this.head = newNode
+        }
+        this.length++
+        return this
+    }
+
+    get = (index) => {
+        if(index<0||index>=this.length)
+            return undefined
+        let current = this.head
+        let currentLength = 0
+        while(index!=currentLength){
+            current = current.next
+            currentLength++
+        }
+        return current
+    }
 }
 
 const DLL = new DoubleLinkedList()
 DLL.push(1)
-DLL.push(2)
+
 DLL.push(3)
 DLL.push(4)
 DLL.push(5)
+console.log(DLL.unshift(2))
+console.log(DLL)
+
 DLL.tarverse()
-DLL.reverseTarverse()
+console.log(DLL)
