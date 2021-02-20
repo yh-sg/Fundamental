@@ -13,10 +13,9 @@ class Stack{
     }
     push=(val)=>{
         let newNode = new Node(val)
-        if(!this.first){
-            this.first = newNode;
-            this.last = newNode;
-        }else{
+        if(!this.first) this.first=this.last=newNode;
+
+        else{
             let temp = this.first;
             this.first = newNode;
             this.first.next = temp;
@@ -25,21 +24,44 @@ class Stack{
     }
 
     pop=()=>{
-        if(this.size===0){
-            return null;
-        }
-        let temp = this.first;
+        if(this.size===0) return null;
+        let popVal = this.first;
         if(this.first===this.last)
             this.last = null
-        else{
-            
-        }
-        return --this.size
+        this.first = this.first.next
+        this.size--
+        return popVal
     }
 }
 
-let stack = new Stack();
-stack.push(1);
-stack.push(2);
-stack.push(3);
-stack.push(4);
+class Queue{
+    constructor(){
+        this.first = null;
+        this.last = null;
+        this.size = 0;
+    }
+
+    enqueue=(val)=>{
+        let newNode = new Node(val);
+        if(this.first==null) this.first=this.last=newNode;
+        else{
+            this.last.next=newNode;
+            this.last=newNode;
+        }
+        return ++this.size;
+    }
+
+    dequeue=()=>{
+        if(!this.first) return null;
+
+        let removedNode = this.first;
+        if(this.first==this.last)
+            this.last=null
+        this.first = this.first.next
+        this.size--
+        return removedNode
+    }
+}
+
+let stack = new Stack()
+let queue = new Queue()
