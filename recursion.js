@@ -59,6 +59,17 @@ function isPalindrome(str){
 }
 
 function someRecursive(arr, callback){
-    //TODO
-    // if(arr.length===0) return false
+    if(arr.length===0) return false;
+    if(callback(arr[0])) return true;
+    return someRecursive(arr.slice(1),callback);
   }
+
+  let result = [];
+
+function capitalizeFirst (arr) {
+  if(arr.length===0) return result;
+  
+  let capLetter = arr[0].substring(0,1).toUpperCase();
+  result.push(capLetter + arr[0].slice(1));
+  return capitalizeFirst(arr.slice(1))
+}
