@@ -14,6 +14,7 @@ class HashTable{
         }
         return total;
     }
+
     //uses separate chaining method for collisions
     set(key,value){
         let index = this._hash(key);
@@ -33,6 +34,32 @@ class HashTable{
         }
         return undefined
     }
+
+    values(){
+        let valuesArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if(this.keyMap[i]){
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    if(!valuesArr.includes(this.keyMap[i][j][1])) //handle duplicate values
+                        valuesArr.push(this.keyMap[i][j][1])           
+                }
+            }
+        }
+        return valuesArr
+    }
+
+    keys(){
+        let keysArr = [];
+        for (let i = 0; i < this.keyMap.length; i++) {
+            if(this.keyMap[i]){
+                for (let j = 0; j < this.keyMap[i].length; j++) {
+                    if(!keysArr.includes(this.keyMap[i][j][0])) //handle duplicate values
+                    keysArr.push(this.keyMap[i][j][0])            
+                }
+            }
+        }
+        return keysArr
+    }
 }
 
 let ht = new HashTable();
@@ -42,4 +69,5 @@ ht.set("olive","#808000")
 ht.set("salmon","#FA8072")
 ht.set("lightcoral","#F08080")
 ht.set("mediumvioletred","#C71585")
+ht.set("plum","#DDA0DD")
 ht.set("plum","#DDA0DD")
