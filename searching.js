@@ -17,7 +17,7 @@ function linearSearch(arr,num) {
 //*While the left pointer comes before the right pointer
 
 function binarySearch(arr,num) {
-    arr = arr.sort()
+    arr = arr.sort((a, b) => a - b)
     let left = 0
     let right = arr.length-1
     while(left<=right){

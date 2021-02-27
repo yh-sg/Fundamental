@@ -148,14 +148,20 @@ class SinglyLinkedList{
         return removed
     }
 
-    //TODO REVERSE!!!!
     reverse = () => {
-        const temp = this.tail
-        this.head = this.tail 
-        this.tail = temp
-        const next
-        const prev
-        const node = this.head;
+        let node = this.head
+        this.head = this.tail
+        this.tail = node;
+        let next=null,
+            prev=null;
+        for (let i = 0; i < this.length; i++) {
+            next = node.next;
+            node.next = prev
+            prev = node
+            node = next
+        }
+        return this.traverse();
+        
     }
 
 }
