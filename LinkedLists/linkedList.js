@@ -161,7 +161,6 @@ class SinglyLinkedList{
             node = next
         }
         return this.traverse();
-        
     }
 
 }
