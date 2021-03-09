@@ -31,40 +31,87 @@ class Graph{
         delete this.adjacencyList[vertex]
     }
 
-    DFS(start){
-        const result = [];
-        const visited = {};
-        const adjacencyList = this.adjacencyList;
+    dfsRecursive(start){
+        const result = [],
+        visited = {},
+        adjacencyList = this.adjacencyList;
 
         (function dfs(vertex){
             if(!vertex) return null;
             visited[vertex] = true;
             result.push(vertex);
-            adjacencyList[vertex].forEach(neighbor => {
-                if(!visited[neighbor]){
-                    return dfs(neighbor)
+            adjacencyList[vertex].forEach(neighbour => {
+                if(!visited[neighbour]){
+                    return dfs(neighbour)
                 }
             });
         })(start);
 
         return result;
     }
+
+     dfsIterative(start){
+        const stack = [start],
+        result = [],
+        visited = {};
+        let currentVertax;
+
+        visited[start] = true;
+        while(stack.length){
+            console.log(stack);
+            currentVertax = stack.pop();
+            result.push(currentVertax);
+
+            this.adjacencyList[currentVertax].forEach(neighbour=> {
+                if(!visited[neighbour]){
+                    visited[neighbour] = true;
+                    stack.push(neighbour)
+                }
+            })
+            
+        }
+        return result;
+     }
 }
 
 let g = new Graph()
-g.addVertex("Fukuoka")
-g.addVertex("Saga")
-g.addVertex("Kagoshima")
-g.addVertex("Kumamoto")
-g.addVertex("Oita")
-g.addVertex("Miyazaki")
-g.addVertex("Nagasaki")
-g.addEdge("Fukuoka", "Saga")
-g.addEdge("Fukuoka", "Kumamoto")
-g.addEdge("Kumamoto", "Kagoshima")
-g.addEdge("Fukuoka", "Oita")
-g.addEdge("Kumamoto", "Oita")
-g.addEdge("Miyazaki", "Kagoshima")
-g.addEdge("Miyazaki", "Kumamoto")
-g.addEdge("Miyazaki", "Oita")
-g.addEdge("Nagasaki", "Saga")
+// g.addVertex("Fukuoka")
+// g.addVertex("Saga")
+// g.addVertex("Kagoshima")
+// g.addVertex("Kumamoto")
+// g.addVertex("Oita")
+// g.addVertex("Miyazaki")
+// g.addVertex("Nagasaki")
+// g.addEdge("Fukuoka", "Saga")
+// g.addEdge("Fukuoka", "Kumamoto")
+// g.addEdge("Kumamoto", "Kagoshima")
+// g.addEdge("Fukuoka", "Oita")
+// g.addEdge("Kumamoto", "Oita")
+// g.addEdge("Miyazaki", "Kagoshima")
+// g.addEdge("Miyazaki", "Kumamoto")
+// g.addEdge("Miyazaki", "Oita")
+// g.addEdge("Nagasaki", "Saga")
+
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B","D")
+g.addEdge("C","E")
+g.addEdge("D","E")
+g.addEdge("D","F")
+g.addEdge("E","F")
+
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \   /
+//          F
