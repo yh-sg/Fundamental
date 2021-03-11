@@ -86,5 +86,35 @@ function capitalizeWords (arr) {
   return capitalizeWords(arr.slice(1));
 }
 
+function coinFlips(num){
+    const results = [];
+    function rCoinFlips(stem=""){
+        if(stem.length ===  num){
+            results.push(stem);
+        }else{
+            rCoinFlips(stem+"H");
+            rCoinFlips(stem+"T");
+        }
+    }
+    rCoinFlips();
+    return results;
+}
+
+function findMax(arr, index=1, max){
+    // if there's no max yet, set it to the first element
+    if(!max & arr.length){
+        max = arr[0];
+    }
+    // the base case is when all indices have been searched
+    if(index == arr.length){
+        return max;
+    }else{
+        if(arr[index] >  max){
+            max = arr[index]
+        }
+        return findMax(arr, index+1, max);
+    }
+}
+
 // let words = ['i', 'am', 'learning', 'recursion'];
 // capitalizedWords(words); // ['I', 'AM', 'LEARNING', 'RECURSION']
