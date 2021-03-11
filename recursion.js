@@ -67,10 +67,10 @@ function someRecursive(arr, callback){
     return someRecursive(arr.slice(1),callback);
   }
 
-let result = [];
-
 function capitalizeFirst (arr) {
     // capitalizeFirst(['car','taco','banana']); // ['Car','Taco','Banana']
+    let result = [];
+
     if(arr.length===0) return result;
     
     let capLetter = arr[0].substring(0,1).toUpperCase();
@@ -78,9 +78,10 @@ function capitalizeFirst (arr) {
     return capitalizeFirst(arr.slice(1))
 }
 
-let result = [];
-
 function capitalizeWords (arr) {
+
+    let result = [];
+
   if(arr.length===0) return result;
   result.push(arr[0].toUpperCase());
   return capitalizeWords(arr.slice(1));

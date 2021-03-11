@@ -72,7 +72,7 @@ const insertionSort = (arr) => {
 //? Divide and conquer
 //* In order to inmplement merge sort, it's useful to first implement a function responsible for merging two sorted arrays
 //* Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
-//TODO Create an empty array, take a look at the smallest values in each input array
+// https://www.youtube.com/watch?v=XaqR3G_NVoo
 
 const mergeSort = (arr) => {
 
@@ -108,6 +108,34 @@ const mergeSort = (arr) => {
     if(arr.length<=1) return arr;
     let mid = Math.floor(arr.length/2),
         left = mergeSort(arr.slice(0,mid)),
-        right= arr.slice(mid);
+        right= mergeSort(arr.slice(mid));
     return mergeArr(left, right);
+}
+
+//!Quick Sort
+//* Like merge sort, exploits the face that arrays of 0/1 element are always sorted
+//* Use "pivot" and find the index where pivot should end up in sorted array
+//* Once the pivot is positioned, quick sort is applied on either side of the pivot 
+// https://www.youtube.com/watch?v=ywWBy6J5gz8 (this video shows 1st element as pivot, start from back)
+
+const pivot = (arr, start=0) =>{
+
+    const swap = (arr,i,j) => {
+        let temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+    }
+
+    let pivot = arr[start],
+        swapIndex = start;
+
+    for (let i = 1; i < arr.length; i++) {
+        if(pivot > arr[i]){
+            swapIndex++
+            swap(arr,swapIndex,i)
+            console.log(arr)
+        }
+    }
+    swap(arr,start,swapIndex)
+    return swapIndex;
 }
