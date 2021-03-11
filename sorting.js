@@ -73,3 +73,41 @@ const insertionSort = (arr) => {
 //* In order to inmplement merge sort, it's useful to first implement a function responsible for merging two sorted arrays
 //* Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
 //TODO Create an empty array, take a look at the smallest values in each input array
+
+const mergeSort = (arr) => {
+
+    const mergeArr = (arr1,arr2) => {
+        //only works with sorted arr =)
+        let result = [],
+            i=0,
+            j=0;
+        while(i<arr1.length&&j<arr2.length){
+            if(arr1[i]<arr2[j]){
+                result.push(arr1[i])
+                i++
+            }else{
+                result.push(arr2[j])
+                j++
+            }
+        }
+    
+        while(i<arr1.length){
+            result.push(arr1[i])
+            i++
+        }
+    
+        while(j<arr2.length){
+            result.push(arr2[j])
+            j++
+        }
+    
+        return result
+    }
+
+    //base case
+    if(arr.length<=1) return arr;
+    let mid = Math.floor(arr.length/2),
+        left = mergeSort(arr.slice(0,mid)),
+        right= arr.slice(mid);
+    return mergeArr(left, right);
+}
