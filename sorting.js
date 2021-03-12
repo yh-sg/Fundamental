@@ -4,7 +4,7 @@
 //* If arr[j] is greater than arr[j+1], swap those two values
 //  https://www.youtube.com/watch?v=lyZQPjUT5B4
 
-const bubbleSort = (arr) => {
+let bubbleSort = (arr) => {
     for (let i = arr.length; i > 0; i--) {
         noSwaps = true //! Optimization for buuble sort!!
         for (let j = 0; j < i-1; j++) {
@@ -32,7 +32,7 @@ const bubbleSort = (arr) => {
 //* Repeat this with the next element until the array is sorted
 //  https://www.youtube.com/watch?v=Ns4TPTC8whw
 
-const selectionSort = (arr) => {
+let selectionSort = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         let lowest = i
         for (let j = i+1; j < arr.length; j++) {
@@ -55,7 +55,7 @@ const selectionSort = (arr) => {
 //* Continue to the next element and if it is in the incorrent order, iterate through the sorted portion(i.e. the left side) to place the element in the corrent place.
 //  https://www.youtube.com/watch?v=ROalU379l3U&t=83s
 
-const insertionSort = (arr) => {
+let insertionSort = (arr) => {
     for (let i = 1; i < arr.length; i++) {
         let currVal = arr[i],
             j
@@ -74,34 +74,19 @@ const insertionSort = (arr) => {
 //* Given two arrays which are sorted, this helper function should create a new array which is also sorted, and consists of all of the elements in the two input arrays
 // https://www.youtube.com/watch?v=XaqR3G_NVoo
 
-const mergeSort = (arr) => {
+let mergeSort = (arr) => {
 
     const mergeArr = (arr1,arr2) => {
         //only works with sorted arr =)
-        let result = [],
-            i=0,
-            j=0;
-        while(i<arr1.length&&j<arr2.length){
-            if(arr1[i]<arr2[j]){
-                result.push(arr1[i])
-                i++
+        let result = [];
+        while(arr1.length&&arr2.length){
+            if(arr1[0]<arr2[0]){
+                result.push(arr1.shift())
             }else{
-                result.push(arr2[j])
-                j++
+                result.push(arr2.shift())
             }
         }
-    
-        while(i<arr1.length){
-            result.push(arr1[i])
-            i++
-        }
-    
-        while(j<arr2.length){
-            result.push(arr2[j])
-            j++
-        }
-    
-        return result
+        return [...result,...arr1,...arr2]
     }
 
     //base case
@@ -118,24 +103,38 @@ const mergeSort = (arr) => {
 //* Once the pivot is positioned, quick sort is applied on either side of the pivot 
 // https://www.youtube.com/watch?v=ywWBy6J5gz8 (this video shows 1st element as pivot, start from back)
 
-const pivot = (arr, start=0) =>{
+let quickSort = (arr, left = 0, right = arr.length - 1) => {
 
-    const swap = (arr,i,j) => {
-        let temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
-    }
-
-    let pivot = arr[start],
-        swapIndex = start;
-
-    for (let i = 1; i < arr.length; i++) {
-        if(pivot > arr[i]){
-            swapIndex++
-            swap(arr,swapIndex,i)
-            console.log(arr)
+    let pivot = (arr, start=0, end=arr.length-1)=>{
+        const swap = (arr,i,j) => {
+            let temp = arr[i]
+            arr[i] = arr[j]
+            arr[j] = temp
         }
+    
+        let pivotNum = arr[start],
+            swapIndex = start;
+    
+        for (let i = start+1; i < arr.length; i++) {
+            if(pivotNum > arr[i]){
+                swapIndex++
+                swap(arr,swapIndex,i)
+            }
+        }
+        swap(arr,start,swapIndex)
+        return swapIndex;
     }
-    swap(arr,start,swapIndex)
-    return swapIndex;
+        
+    if(left<right){ //base case
+        pivotIndex = pivot(arr,left,right)
+        //left
+        quickSort(arr,left,pivotIndex-1);
+        //right
+        quickSort(arr,pivotIndex+1,right)
+    } 
+    return arr;
 }
+    
+console.log(quickSort([3,8,7,1,2,5,0,6]))
+console.log(quickSort([4,8,2,1,5,7,6,3]))
+console.log(quickSort([100,-3,2,4,6,9,1,2,5,3,23]))
