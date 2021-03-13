@@ -134,7 +134,44 @@ let quickSort = (arr, left = 0, right = arr.length - 1) => {
     } 
     return arr;
 }
+
+//!Radix Sort
+//Special sorting algo that works on lists of numbers
+//never make comparisons between elements
+//exploits the fact that info about the size of a number is encoded in number of digits
+//more digits means bigger nums
+
+let radixSort = (nums) => {
+
+    let getDigit = (num, place) => {
+        return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
+    }
     
-console.log(quickSort([3,8,7,1,2,5,0,6]))
-console.log(quickSort([4,8,2,1,5,7,6,3]))
-console.log(quickSort([100,-3,2,4,6,9,1,2,5,3,23]))
+    let digitCount = (num) => {
+        return Math.abs(num).toString().length
+    }
+    
+    let mostDigit = (arr) => {
+        let max = 0
+        arr.forEach(e => {
+            max = Math.max(max,digitCount(e))
+        });
+        return max
+    }
+
+    let maxDigitCount = mostDigit(nums)
+
+    for (let i = 0; i < maxDigitCount; i++) {
+        let digitBuckets = Array.from({length:10}, () => [])
+        for (let j = 0; j < nums.length; j++) {
+            let digit = getDigit(nums[j],i)
+            digitBuckets[digit].push(nums[j])
+        }
+        console.log(digitBuckets);
+        nums = [].concat(...digitBuckets)
+        console.log(nums);
+    }
+    return nums
+}
+
+radixSort([23,345,5467,12,2445,9952])
