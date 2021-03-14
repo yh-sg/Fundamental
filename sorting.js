@@ -5,23 +5,23 @@
 //  https://www.youtube.com/watch?v=lyZQPjUT5B4
 
 let bubbleSort = (arr) => {
-    for (let i = arr.length; i > 0; i--) {
-        noSwaps = true //! Optimization for buuble sort!!
-        for (let j = 0; j < i-1; j++) {
-            // console.log(arr,arr[j],arr[j+1]);
-            if(arr[j]>arr[j+1]){
-                //SWAP
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-                noSwaps = false;
-            }
-        }
-        // console.log("one cycle complete");
-        if(noSwaps) break; //? Optimization for bubble sort!!
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true; //! Optimization for buuble sort!!
+    for (let j = 0; j < i - 1; j++) {
+      // console.log(arr,arr[j],arr[j+1]);
+      if (arr[j] > arr[j + 1]) {
+        //SWAP
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwaps = false;
+      }
     }
-    return arr
-}
+    // console.log("one cycle complete");
+    if (noSwaps) break; //? Optimization for bubble sort!!
+  }
+  return arr;
+};
 
 //! Selection Sort
 //? Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
@@ -33,20 +33,20 @@ let bubbleSort = (arr) => {
 //  https://www.youtube.com/watch?v=Ns4TPTC8whw
 
 let selectionSort = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-        let lowest = i
-        for (let j = i+1; j < arr.length; j++) {
-            // console.log(i, j)
-            if(arr[j]<arr[lowest]){
-                lowest = j
-            }
-        }
-        let temp = arr[i]
-        arr[i] = arr[lowest]
-        arr[lowest] = temp
+  for (let i = 0; i < arr.length; i++) {
+    let lowest = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      // console.log(i, j)
+      if (arr[j] < arr[lowest]) {
+        lowest = j;
+      }
     }
-    return arr
-}
+    let temp = arr[i];
+    arr[i] = arr[lowest];
+    arr[lowest] = temp;
+  }
+  return arr;
+};
 
 //! Insertion Sort
 //? Builds up the sort by gradually creating a larger left half which is always sorted
@@ -56,17 +56,17 @@ let selectionSort = (arr) => {
 //  https://www.youtube.com/watch?v=ROalU379l3U&t=83s
 
 let insertionSort = (arr) => {
-    for (let i = 1; i < arr.length; i++) {
-        let currVal = arr[i],
-            j
-        for (j = i-1; j >= 0 && arr[j]>currVal; j--) {
-            arr[j+1] = arr[j]
-            console.log(arr);
-        }
-        arr[j+1] = currVal
+  for (let i = 1; i < arr.length; i++) {
+    let currVal = arr[i],
+      j;
+    for (j = i - 1; j >= 0 && arr[j] > currVal; j--) {
+      arr[j + 1] = arr[j];
+      console.log(arr);
     }
-    return arr
-}
+    arr[j + 1] = currVal;
+  }
+  return arr;
+};
 
 //! Merge Sort
 //? Divide and conquer
@@ -75,65 +75,64 @@ let insertionSort = (arr) => {
 // https://www.youtube.com/watch?v=XaqR3G_NVoo
 
 let mergeSort = (arr) => {
-
-    const mergeArr = (arr1,arr2) => {
-        //only works with sorted arr =)
-        let result = [];
-        while(arr1.length&&arr2.length){
-            if(arr1[0]<arr2[0]){
-                result.push(arr1.shift())
-            }else{
-                result.push(arr2.shift())
-            }
-        }
-        return [...result,...arr1,...arr2]
+  const mergeArr = (arr1, arr2) => {
+    //only works with sorted arr =)
+    let result = [];
+    while (arr1.length && arr2.length) {
+      if (arr1[0] < arr2[0]) {
+        result.push(arr1.shift());
+      } else {
+        result.push(arr2.shift());
+      }
     }
+    return [...result, ...arr1, ...arr2];
+  };
 
-    //base case
-    if(arr.length<=1) return arr;
-    let mid = Math.floor(arr.length/2),
-        left = mergeSort(arr.slice(0,mid)),
-        right= mergeSort(arr.slice(mid));
-    return mergeArr(left, right);
-}
+  //base case
+  if (arr.length <= 1) return arr;
+  let mid = Math.floor(arr.length / 2),
+    left = mergeSort(arr.slice(0, mid)),
+    right = mergeSort(arr.slice(mid));
+  return mergeArr(left, right);
+};
 
 //!Quick Sort
 //* Like merge sort, exploits the face that arrays of 0/1 element are always sorted
 //* Use "pivot" and find the index where pivot should end up in sorted array
-//* Once the pivot is positioned, quick sort is applied on either side of the pivot 
+//* Once the pivot is positioned, quick sort is applied on either side of the pivot
 // https://www.youtube.com/watch?v=ywWBy6J5gz8 (this video shows 1st element as pivot, start from back)
 
 let quickSort = (arr, left = 0, right = arr.length - 1) => {
+  let pivot = (arr, start = 0, end = arr.length - 1) => {
+    const swap = (arr, i, j) => {
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    };
 
-    let pivot = (arr, start=0, end=arr.length-1)=>{
-        const swap = (arr,i,j) => {
-            let temp = arr[i]
-            arr[i] = arr[j]
-            arr[j] = temp
-        }
-    
-        let pivotNum = arr[start],
-            swapIndex = start;
-    
-        for (let i = start+1; i < arr.length; i++) {
-            if(pivotNum > arr[i]){
-                swapIndex++
-                swap(arr,swapIndex,i)
-            }
-        }
-        swap(arr,start,swapIndex)
-        return swapIndex;
+    let pivotNum = arr[start],
+      swapIndex = start;
+
+    for (let i = start + 1; i < arr.length; i++) {
+      if (pivotNum > arr[i]) {
+        swapIndex++;
+        swap(arr, swapIndex, i);
+      }
     }
-        
-    if(left<right){ //base case
-        pivotIndex = pivot(arr,left,right)
-        //left
-        quickSort(arr,left,pivotIndex-1);
-        //right
-        quickSort(arr,pivotIndex+1,right)
-    } 
-    return arr;
-}
+    swap(arr, start, swapIndex);
+    return swapIndex;
+  };
+
+  if (left < right) {
+    //base case
+    pivotIndex = pivot(arr, left, right);
+    //left
+    quickSort(arr, left, pivotIndex - 1);
+    //right
+    quickSort(arr, pivotIndex + 1, right);
+  }
+  return arr;
+};
 
 //!Radix Sort
 //Special sorting algo that works on lists of numbers
@@ -142,36 +141,35 @@ let quickSort = (arr, left = 0, right = arr.length - 1) => {
 //more digits means bigger nums
 
 let radixSort = (nums) => {
+  let getDigit = (num, place) => {
+    return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
+  };
 
-    let getDigit = (num, place) => {
-        return Math.floor(Math.abs(num) / Math.pow(10, place)) % 10;
-    }
-    
-    let digitCount = (num) => {
-        return Math.abs(num).toString().length
-    }
-    
-    let mostDigit = (arr) => {
-        let max = 0
-        arr.forEach(e => {
-            max = Math.max(max,digitCount(e))
-        });
-        return max
-    }
+  let digitCount = (num) => {
+    return Math.abs(num).toString().length;
+  };
 
-    let maxDigitCount = mostDigit(nums)
+  let mostDigit = (arr) => {
+    let max = 0;
+    arr.forEach((e) => {
+      max = Math.max(max, digitCount(e));
+    });
+    return max;
+  };
 
-    for (let i = 0; i < maxDigitCount; i++) {
-        let digitBuckets = Array.from({length:10}, () => [])
-        for (let j = 0; j < nums.length; j++) {
-            let digit = getDigit(nums[j],i)
-            digitBuckets[digit].push(nums[j])
-        }
-        console.log(digitBuckets);
-        nums = [].concat(...digitBuckets)
-        console.log(nums);
+  let maxDigitCount = mostDigit(nums);
+
+  for (let i = 0; i < maxDigitCount; i++) {
+    let digitBuckets = Array.from({ length: 10 }, () => []);
+    for (let j = 0; j < nums.length; j++) {
+      let digit = getDigit(nums[j], i);
+      digitBuckets[digit].push(nums[j]);
     }
-    return nums
-}
+    console.log(digitBuckets);
+    nums = [].concat(...digitBuckets);
+    console.log(nums);
+  }
+  return nums;
+};
 
-radixSort([23,345,5467,12,2445,9952])
+radixSort([23, 345, 5467, 12, 2445, 9952]);
