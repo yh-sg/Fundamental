@@ -19,26 +19,3 @@ function validAnagram(str1,str2){
     return false;
 }
 
-function countUniqueValues(arr){
-    let obj = {}
-    for(let i=0;i<arr.length;i++){
-        obj[arr[i]] ? obj[arr[i]]++ : obj[arr[i]] = 1; 
-    }
-    return Object.keys(obj).length
-}
-
-//works only if sorted arr
-function sumZero(arr) {
-    let left = 0
-    let right = arr.length-1
-    while(left<right){
-        let sum = arr[left]+arr[right]
-        if(sum===0){
-            return (arr[left],arr[right])
-        } else if(sum>0){
-            right--
-        } else{
-         left++
-        }
-    }
-}
