@@ -44,20 +44,16 @@ function naiveStrSearch(longStr,shortStr) {
     let count = 0
     for (let i = 0; i < longStr.length; i++) {
         for (let j = 0; j < shortStr.length; j++) {
-            // console.log(longStr[i],shortStr[j]);
-            console.log(shortStr[j],longStr[i+j]);
-
-            if(shortStr[j]!==longStr[i+j]){
-                console.log('BREAK!');
-                break;
-            }
-            if(j === shortStr.length-1){
-                console.log('Found One!');
-                count++
-            }
+            // console.log(shortStr[j],longStr[i+j]);
+            if(shortStr[j]!==longStr[i+j]) break;
+            if(j === shortStr.length-1) count++;
         }
     }
     return count
 }
 
 console.log(naiveStrSearch('lorie loled','lo'));
+
+//?KMP Substring Search
+//Worst case O(mn) whereas m is length or string, n is pattern
+//O(m+n) avg case

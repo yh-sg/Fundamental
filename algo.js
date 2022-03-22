@@ -1,4 +1,5 @@
 //Fisher-Yates Shuffle
+
 let shuffle = (arr) => {
     for (let i = arr.length-1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -6,3 +7,11 @@ let shuffle = (arr) => {
     }
     return arr
 }
+
+let printThis = () => {
+    name = 'yonghan'
+
+    return this;
+}
+
+console.log(printThis())
