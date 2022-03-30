@@ -1,0 +1,52 @@
+What is HTTP?
+
+- HTTP(Hypertext Transfer Protocol) is the foundation of the World Wide Web, and is used to load web pages using hypertext links.
+- Flow -> a request to a server, which then sends a response message.
+
+HTTP request
+
+- It is a way that how the internet communicate where the web browsers ask information that's needed to load a website.
+
+HTTP request contains:
+1. HTTP version type
+2. URL
+3. HTTP method
+4. HTTP request headers
+5. Optional HTTP body
+
+What’s an HTTP method?
+- HTTP verb(It indicates the action that the HTTP request expects from the queried server) - GET/POST/UPDATE/DELETE
+
+What are HTTP request headers?
+- Text information stored in key-value pairs
+- Communicate core information such as what browser the client is using what data is being requested.
+- E.g. (Authorization: BASIC Z3Vlc3Q6Z3Vlc3QxMjM=, Cookie: name=value,  Allow: GET, HEAD, PUT, Accept: text/plain , Content-type: application/json  etc...)
+
+What’s in an HTTP request body?
+- Body of an HTTP request contains any information being submitted to the web server like form data.
+
+What’s in an HTTP response?
+- Web clients (often browsers) receive from server in answer to an HTTP request. 
+
+HTTP response contains:
+1. An HTTP status code
+2. HTTP response headers
+3. Optional HTTP body
+
+What’s an HTTP status code?
+3-digit codes most often used to indicate whether an HTTP request has been successfully completed. Status codes are broken into the following 5 blocks:
+1xx Informational
+2xx Success
+3xx Redirection
+4xx Client Error
+5xx Server Error
+
+What are HTTP response headers?
+- Convey important information such as the language and format of the data being sent in the response body.
+(E.g. date: Thu, 21 Mar 2000 12:00:00 GMT, status: 200, content-tyoe: text/html; , status: 200 etc.....)
+
+What’s in an HTTP response body?
+- In most web requests, this is HTML data which a web browser will translate into a web page.
+
+What's a Protocol?
+- A protocol is a system of rules that define how data is exchanged within or between computers. Communications between devices require that the devices agree on the format of the data that is being exchanged. The set of rules that defines a format is called a protocol.
