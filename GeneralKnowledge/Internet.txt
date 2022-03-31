@@ -1,0 +1,28 @@
+Some terminology to look out for....
+
+Network (Devices that are connected to each other....) whereas Internet (global network of networks)
+
+Domain Name System(DNS)
+ - A domain name gets the IP address rather than you need to memorize address such as 111.111.111.111
+ - First, when url is clicked. It will check cache(which can be OS/browser/router) otherwise on internet it will check the 4 servers.
+ - Recursive server - DNS resolver which keeps on asking start from root to TLD to Authoritative. Afterwards, it'll cache.
+    -> DNS Root Name Server(Index of all the servers that will have the information being queried.) 
+    -> (Top level domain)TLD name server (.com) 
+    -> Authoritative name server (google.com) 
+    -> Get IP Address!!
+ - 2 types of top level domain names.
+    1. Generic top-level domains (TLDs) such as .com, .edu, .org, .gov --- Authority over these domains is usually delegated to private organizations.
+    2. country-code top-level domains (ccTLDs) such as .sg .jp .io --- Administered by authorities in each country.
+
+IP address
+ - IPv4 vs IPv6
+
+Packet
+
+Router
+
+Secure Sockets Layer(SSL)
+
+Cloud?
+
+How does wireless internet work?

@@ -135,3 +135,4 @@ Nutshell
 
  - Transport Layer responsibilities(TCP vs UDP)
  https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
+ https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP.
