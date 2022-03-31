@@ -3,6 +3,10 @@
 
 https://roadmap.sh/
 
+Metaphor | Simile | Analogy
+Pomodoro
+
+
 ---
 
 ## My Progress

@@ -1,6 +1,6 @@
 What is HTTP?
 - HTTP(Hypertext Transfer Protocol) is the foundation of the World Wide Web, and is used to load web pages using hypertext links(fetching resources).
-- Flow -> a request to a server, which then sends a response message.
+- Flow -> a request to a server, which then sends a response message. (From client end to the server end)
 
 HTTP request
 - It is a way that how the internet communicate where the web browsers ask information that's needed to load a website.
@@ -13,7 +13,7 @@ HTTP request contains:
 5. Optional HTTP body
 
 What’s an HTTP method?
-- HTTP verb(It indicates the action that the HTTP request expects from the queried server) - GET/POST/UPDATE/DELETE
+- HTTP verb(It indicates the action that the HTTP request expects from the queried server) - GET/POST/PUT(Entire content replacement)/PATCH(Partial Modification)/DELETE
 
 What are HTTP request headers?
 - Text information stored in key-value pairs
@@ -51,7 +51,7 @@ What's a Protocol?
 
 What is HTTPS?
 - HTTPS(Hypertext Transfer Protocol sercure)
-- Data sent is encrypted (Secure Socket Layer[SSL]/Transport Layer Security[TLL])
+- Data sent is encrypted (Secure Socket Layer[SSL]/Transport Layer Security[TLS])
 - Install certificate on web host
 
 ========================================================================================================================================================================================================================================================================================================================
@@ -80,19 +80,58 @@ CDN
     - the path, pointing to the requested resources
     - the HTTP version to communicate with
 
-response contains:
+Response contains:
     - a status line
     - response headers, telling the browser how to handle the response
     - the requested resource at that path, contents like HTML, CSS, Javascript, or image files, or data for the client
 Content-Type response header will tell what to do with the first resource, afterwards it will make additional requests to get JS/images/CSS/data etc....
 
-
-Whole Cycle -> 1. Click on URL -> 2. Browser looks up IP address for the domain -> 3. Browser initiates TCP connection with the server -> 4. Browser sends the HTTP request to the server -> 5. Server processes request and sends back a response -> 6. Browser renders the content
+Whole Cycle:
+1. Click on URL -> 2. Browser looks up IP address for the domain -> 3. Browser initiates TCP connection with the server -> 4. Browser sends the HTTP request to the server -> 5. Server processes request and sends back a response -> 6. Browser renders the content
 
 ========================================================================================================================================================================================================================================================================================================================
 
 Proxy server
 - Intermediate program or computer used when navigating through different networks of the Internet.
 - 2 types of proxies
- 1. Forward proxy that handles requests from and to anywhere on the Internet.
- 2. Reverse proxy taking requests from the Internet and forwarding them to servers in an internal network.
+    1. Forward proxy that handles requests from and to anywhere on the Internet.
+    2. Reverse proxy taking requests from the Internet and forwarding them to servers in an internal network.
+Act as:
+    1. caching (the cache can be public or private, like the browser cache)
+    2. filtering (like an antivirus scan or parental controls)
+    3. load balancing (to allow multiple servers to serve different requests)
+    4. authentication (to control access to different resources)
+    5. logging (allowing the storage of historical information)
+
+========================================================================================================================================================================================================================================================================================================================
+
+ Some basic questions I would ask myself:
+ 1. What is HTTP?
+ 2. What are HTTP Request Methods? 
+ 3. What are HTTP Request Messages? 3... 
+ 4. What are the Status Code? 1xx, 2xx, 3xx, 4xx, 5xx....
+ 5. What is HTTP Response?
+ 6. What is HTTPS?
+ 7. What happen when an url was clicked?
+
+========================================================================================================================================================================================================================================================================================================================
+Extras
+========================================================================================================================================================================================================================================================================================================================
+
+- Bandwidth (Maximum amount(How much) of data transmitted over an internet connection in a given amount of time)
+
+1. Bandwidth vs latency(internet speed)
+ - Latency refers to delay/ping rate in milliseconds. Amount of time for data to travel between source and destination.
+ - Bandwidth is amount of data can be transferred per second
+
+2. Throughput
+ - How much data can actually gets delivered in a certain amount of time....taking latency, netword speed, packet loss and other factors into account.
+
+3. Analogy
+ - Think bandwidth as motorway, 1 lane only can take 1 car but 5 lanes could take 5 cars(5 Mbps). But it doesn't mean that internet is any faster compare from 1 Mbps to 5 Mbps.
+
+Nutshell
+ - Internet bandwidth is about how much data can be download or uploaded from your computer, while internet speed is how fast can the data be uploaded or downloaded on your computer.
+
+ - Transport Layer responsibilities(TCP vs UDP)
+ https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
