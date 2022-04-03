@@ -134,5 +134,6 @@ Nutshell
  - Internet bandwidth is about how much data can be download or uploaded from your computer, while internet speed is how fast can the data be uploaded or downloaded on your computer.
 
  - Transport Layer responsibilities(TCP vs UDP)
+ Streaming
  https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
  https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP.

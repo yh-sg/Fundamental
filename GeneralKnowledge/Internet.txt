@@ -2,6 +2,8 @@ Some terminology to look out for....
 
 Network (Devices that are connected to each other....) whereas Internet (global network of networks communicate through a standardized set of protocols)
 
+Internet is just the network of the networks.
+
 Domain Name System(DNS)
  - A domain name gets the IP address rather than you need to memorize address such as 111.111.111.111
  - First, when url is clicked. It will check cache(which can be OS/browser/router) otherwise on internet it will check the 4 servers.
@@ -30,12 +32,31 @@ Packet
 - 2 parts -> 1) Header(Informations like source/destination/length of the packet) 2) Checksum value(Detect if a packet was damaged or not)
 
 Router
-- Enable devices to connect to the internet with cable by ISP (Internet Service Provider)
+- Enable devices to connect to the internet. In home, it's connected with cable by ISP (Internet Service Provider)
+- It has special table called the 'Routing table' to tell router which path should packet choose by looking at it's header destination(If path's not avaliable or too busy, choose another one)
 
 Reliability
+- Internet in simplified version is a structure have many router(distributed structure) connected with one another to communicate and connects all LANs in the world.
+- If entire of the load is given to the single point, it's 'Single Point of Failure'
+- Underwater cables that plays important part of the internet today(Intercontinental connections)
+- Different servers to communicate around the world
+
+Wide Area Network(WAN)
+- For companies which need to communicate as if it's like LAN(Same environment) from different places covers huge areas like cities/countries/continents, they need WAN with encapsulation+encryption
+- Why? Because internet is a public network and everyone owns it. Hackers could tapered the packet on the internet easily as it could be seen or modified
+- VPN provides tunneling feature(High-security end-to-end-encryption communication between two locations) to provide privacy, anonymity and security on the internet.
 
 Security protocols - Secure Sockets Layer(SSL) & TLS
+- The sercure lock signals that third parties won't be able to read any information was sent or receive. 
+- Under the hood, SSL accomplishes that by transforming your data into a coded message that only the recipient knows how to decipher. 
+- A third party will only see a random string of characters, not the actual contents of emails, credit card numbers, or other private information.
 
-Cloud?
+Cloud
+- By storing files on servers and delivering software over the internet, cloud computing provides users with a simpler, more reliable computing experience. 
+- Cloud computing allows consumers and businesses to treat computing as a utility, leaving the technical details to technology companies.
 
 How does wireless internet work?
+- Wifi networks uses electromagnetic frequencies that are available for devices to send and receive data.
+- To prevent other networks from interfering with each other, there are strict limits on the power (and therefore the range) of wifi networks.
+- Devices have a wireless adapter built into them. The wireless adapter is a component in the hardware referred to as a WiFi card. 
+- The WiFi card picks up on the radio frequencies allowing the devices to connect to wireless internet.
