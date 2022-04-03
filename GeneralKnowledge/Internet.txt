@@ -1,6 +1,6 @@
 Some terminology to look out for....
 
-Network (Devices that are connected to each other....) whereas Internet (global network of networks)
+Network (Devices that are connected to each other....) whereas Internet (global network of networks communicate through a standardized set of protocols)
 
 Domain Name System(DNS)
  - A domain name gets the IP address rather than you need to memorize address such as 111.111.111.111
@@ -9,19 +9,32 @@ Domain Name System(DNS)
     -> DNS Root Name Server(Index of all the servers that will have the information being queried.) 
     -> (Top level domain)TLD name server (.com) 
     -> Authoritative name server (google.com) 
-    -> Get IP Address!!
+    -> Get IP Address!! Cache it with common ones like browser/OS/Recursive Resolver. (Security issue -> Cache poisoning)
+
+(wikipedia.org)domain name -> (en.wikipedia.org/zh.wikipedia.org/jp.wikipedia.org)subdomains
+
  - 2 types of top level domain names.
     1. Generic top-level domains (TLDs) such as .com, .edu, .org, .gov --- Authority over these domains is usually delegated to private organizations.
     2. country-code top-level domains (ccTLDs) such as .sg .jp .io --- Administered by authorities in each country.
 
-IP address
- - IPv4 vs IPv6
+IP(Internet protocol) address
+ - IPv4(N.N.N.N where N is binary ranging 0-255 aka 32-bit(2^32) address) vs IPv6(X:X:X:X:X:X:X:X in hexadecimal whereas zeroes are omitted aka 128 bit address)
+ - Dynamic IP addresses vs Static IP addresses
+
+Switch(Cannot use wireless technology, use access point(Big company/places) for wireless which gives Wi-Fi signal) 
+- Allow computers in the same environment to communicate with each other with cables to lan ports...
+- LAN (Local access network) connects devices within a restricted area
 
 Packet
+- Data which were being chopped/divided into packets and being sent to other devices through the cables of the internet
+- 2 parts -> 1) Header(Informations like source/destination/length of the packet) 2) Checksum value(Detect if a packet was damaged or not)
 
 Router
+- Enable devices to connect to the internet with cable by ISP (Internet Service Provider)
 
-Secure Sockets Layer(SSL)
+Reliability
+
+Security protocols - Secure Sockets Layer(SSL) & TLS
 
 Cloud?
 
