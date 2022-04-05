@@ -60,3 +60,25 @@ How does wireless internet work?
 - To prevent other networks from interfering with each other, there are strict limits on the power (and therefore the range) of wifi networks.
 - Devices have a wireless adapter built into them. The wireless adapter is a component in the hardware referred to as a WiFi card. 
 - The WiFi card picks up on the radio frequencies allowing the devices to connect to wireless internet.
+
+Internet Service Provider(ISP)
+- Each ISP(Imagine inside, it have many routers) is responsible for specific routers. There are 3 types:
+    - Local ISP (Think of it as connect neighbourhoods/small areas)
+    - Regional ISP (Connect different cities within the same country)
+    - Global ISP (Connects Different countries, it's the internet backbone with internet exchange point to work synchronously)
+Network of a Country => Local ISPs + Regional ISPs
+There's hierarchy for ISP communications, no local ISP is link to another. E.g. Local -> Regional -> Another Local
+There can be special cases where global ISP is connected to local but it has to be:
+    1) Suitable location
+    2) Extra cost to build an infrastructure to direct connection
+
+- Each router in Regional will makes a choice, to determines which global isp the packet(can take different routes) will be sent. 
+- Charge a certain fee for these services
+- Point of presence(POP)/paths is an access point, or physical location at which two or more networks or communication devices share a connection
+ - Acts like internet exchange points with routers, switches, servers, and other devices necessary for traffic to cross over networks are all present at PoPs
+
+Large companies want to communicate with customers in the fastest and most efficient way. Using:
+    1) Distributed server
+    2) Peering (Could connect almost direct connection with the users. Security will be better as due to direct connection, the packet passes through much less POP)
+
+https://www.vox.com/2014/6/16/18076282/the-internet <-- Revision
