@@ -4,7 +4,7 @@
 [Roadmap](https://roadmap.sh/)
 
 - Metaphor | Simile | Analogy
-- Pomodoro ( 30-10 <4 Times> ) ----> Pair programming (Where one is the driver and the other is the navigator, and exchange roles on every interval) ----> Ping-pong Pairing(TDD red->green->refactor loop)
+- Pomodoro ( 30-10 <4 Times> ) ----> Pair programming (Where one is the driver and the other is the navigator, and exchange roles on every interval) ----> Ping-pong Pairing (TDD red->green->refactor loop)
 - Feynman (4 Steps)
 - Pareto principle (80-20)
 - Spaced repetition

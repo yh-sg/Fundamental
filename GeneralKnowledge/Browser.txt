@@ -1,0 +1,42 @@
+Web hosting
+- Hosting provider that allocates space on a web server for a website that is hosted on a server to store its files. Web hosting makes the files that comprise a website available for viewing online.
+- Web hosting service providers have the servers, connectivity, and associated services to host websites. 
+- By offering a variety of hosting plans, they cover the spectrum of hosting needs, from small blogs and large organizations.
+- The amount of space allocated on a server to a website depends on the type of hosting. These hosting are differentiated by the kind of technology used for the server, the level of management provided and the additional services on offer.
+    - The main types of hosting are shared:
+        - dedicated, 
+        - VPS and 
+        - Reseller
+
+How to pick a web host(the factors):
+    - Bandwidth Allowance
+    - Advertisement
+    - Upgrade Options
+    - Uptime (reliability)
+    - Cost
+    - Technical support
+
+Types of web hosting:
+    - Shared Web Hosting
+        - A website is hosted on the same server as many other websites. 
+        - Most web hosting companies provide shared hosting. 
+        - No administration issues : web host will usually be responsible for administration and maintenance of the hardware (+)
+        - Low cost: New sites which don’t expect a lot of traffic in the short term for personal project and small-sized businesses (+)
+        - Low Entry: Designed for beginners and tech novices (+)
+        - Performance issue : Not suitable for large sites with lots of traffic. (-)
+        - File permission risks: Incorrectly configured file permission settings could allow fellow users of the server to access your files (-)
+        - Lack of admin access: Lack of root access might impact on your ability to perform admin tasks (-)
+    - VPS Hosting
+        - Unlike shared hosting, it's not sharing the resources in a first-come-first-serve type of format. Instead, it have specific resources assigned.
+        - Flexibility: Scalable plans that grow with your website (Think of it like an investment) (+)
+        - Security: More customizable control with root access(+)
+        - Cost: Middle option between shared web hosting and dedicated (=)
+        - Entry barrier: Require basic tech knowledge and vague idea how much storage and bandwidth needed (-)
+    - Dedicated Hosting
+        
+    - Cloud Hosting
+    - Reseller Hosting
+
+
+
+https://www.namecheap.com/hosting/what-is-web-hosting-definition/
