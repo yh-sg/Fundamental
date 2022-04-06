@@ -1,0 +1,18 @@
+Components:
+
+User Interface
+Browser Engine
+Rendering Engine
+Networking
+JavaScript Interpreter
+UI Backend
+Data Storage/Persistence
+
+Role of Rendering Engine: 5 Steps
+1. Get resources
+2. Dom Tree
+3. Render Tree
+4. layout process
+5. paint() method
+
+Whenever button/links are clicked, or just by simply dragging the web....DOM tree will change and need to be re-parsed

@@ -15,7 +15,12 @@ Domain Name System(DNS)
 
 (wikipedia.org)domain name -> (en.wikipedia.org/zh.wikipedia.org/jp.wikipedia.org)subdomains
 
- - 2 types of top level domain names.
+URL:
+
+
+
+
+2 types of top level domain names.
     1. Generic top-level domains (TLDs) such as .com, .edu, .org, .gov --- Authority over these domains is usually delegated to private organizations.
     2. country-code top-level domains (ccTLDs) such as .sg .jp .io --- Administered by authorities in each country.
 
