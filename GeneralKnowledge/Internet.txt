@@ -15,10 +15,13 @@ Domain Name System(DNS)
 
 (wikipedia.org)domain name -> (en.wikipedia.org/zh.wikipedia.org/jp.wikipedia.org)subdomains
 
-URL:
-
-
-
+URL(Uniform Resource Locator):
+http://www.something.com:80/path/to/myfile.html?key1=value1&key2=value2#somewhereInTheDocument
+Scheme(http) -> Protocol((A set method for exchanging or transferring data around a computer network) that the browser must use to request the resource.
+Authority(www.something.com:80) -> www.something.com is the domain name | 80 is the port[Usually it's ommitted it using standard portocol 80(HTTP), 443(HTTPS)] to grant access to its resources. Otherwise, it's mandatory.
+Path to resource(/path/to/myfile.html)
+Parameters(?key1=value1&key2=value2) -> key/value pairs separated with the & symbol.
+Anchor(#somewhereInTheDocument) -> Anchor("bookmark") to another part of the resource(id). giving the browser the directions to kocat at that "bookmarked" spot
 
 2 types of top level domain names.
     1. Generic top-level domains (TLDs) such as .com, .edu, .org, .gov --- Authority over these domains is usually delegated to private organizations.
@@ -87,3 +90,10 @@ Large companies want to communicate with customers in the fastest and most effic
     2) Peering (Could connect almost direct connection with the users. Security will be better as due to direct connection, the packet passes through much less POP)
 
 https://www.vox.com/2014/6/16/18076282/the-internet <-- Revision
+
+========================================================================================================================================================================================================================================================================================================================
+
+ Some basic questions I would ask myself:
+ 1. What is an IP address, a domain name and DNS?
+ 2. How does the internet works as a whole?
+ 3. Understanding of clients and servers, how they interact using request/response cycle?

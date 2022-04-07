@@ -107,11 +107,11 @@ Act as:
 
  Some basic questions I would ask myself:
  1. What is HTTP?
- 2. What are HTTP Request Methods? 
+ 2. What are HTTP Request Methods and what does each do? 
  3. What are HTTP Request Messages? 3... 
  4. What are the Status Code? 1xx, 2xx, 3xx, 4xx, 5xx....
  5. What is HTTP Response?
- 6. What is HTTPS?
+ 6. What is HTTPS? Difference between HTTP?
  7. What happen when an url was clicked?
 
 ========================================================================================================================================================================================================================================================================================================================
