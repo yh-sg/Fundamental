@@ -2,6 +2,8 @@
 ---
 
 [Roadmap](https://roadmap.sh/)
+[How the Internet Works for Developers - Overview & Frontend](https://www.youtube.com/watch?v=e4S8zfLdLgQ&list=WL)
+[How the Internet Works for Developers - Servers & Scaling](https://www.youtube.com/watch?v=FTAPjr7vgxE)
 
 - Metaphor | Simile | Analogy
 - Pomodoro ( 30-10 <4 Times> ) ----> Pair programming (Where one is the driver and the other is the navigator, and exchange roles on every interval) ----> Ping-pong Pairing (TDD red->green->refactor loop)
