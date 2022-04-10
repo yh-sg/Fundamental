@@ -129,13 +129,13 @@ Let's break it(URL) down!
 
 ---
 
-### Some basic questions I would ask myself:
+### Some basic questions I would ask myself
 
-    1. What is HTTP?
-    2. What are HTTP Request Methods and what does each do? 
-    3. What are HTTP Request Messages? 3... 
-    4. What are the Status Code? 1xx, 2xx, 3xx, 4xx, 5xx....
-    5. What is HTTP Response?
-    6. What is HTTPS? Difference between HTTP?
-    7. What happen when an url was clicked?
-    8. Why POST instead of GET? [HttpMethod](https://www.w3schools.com/tags/ref_httpmethods.asp)
+1. What is HTTP?
+2. What are HTTP Request Methods and what does each do? 
+3. What are HTTP Request Messages? 3... 
+4. What are the Status Code? 1xx, 2xx, 3xx, 4xx, 5xx....
+5. What is HTTP Response?
+6. What is HTTPS? Difference between HTTP?
+7. What happen when an url was clicked?
+8. Why POST instead of GET? [HttpMethod](https://www.w3schools.com/tags/ref_httpmethods.asp)

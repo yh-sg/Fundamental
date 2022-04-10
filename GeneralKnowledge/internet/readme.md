@@ -122,11 +122,14 @@
 ---
 
 #### Some basic questions I would ask myself:
-    1. What is an IP address, a domain name and DNS?
-    2. How does the internet works as a whole?
-    3. Understanding of clients and servers, how they interact using request/response cycle?
 
-Streaming:
+1. What is an IP address, a domain name and DNS?
+2. How does the internet works as a whole?
+3. Understanding of clients and servers, how they interact using request/response cycle?
 
-https://www.geeksforgeeks.org/differences-between-tcp-and-udp/
-https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP.
+---
+
+#### TCP and UDP
+
+[Differences 1](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)    
+[Differences 2](https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP)  

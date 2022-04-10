@@ -30,5 +30,5 @@ Whenever button/links are clicked, or just by simply dragging the web....DOM tre
 
 ### Links: 
 
-[How browser works](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+[How browser works](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)  
 [Rendering engine](https://www.browserstack.com/guide/browser-rendering-engine)
