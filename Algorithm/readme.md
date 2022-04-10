@@ -1,6 +1,9 @@
 # Algorithm
-## Searching
-### Linear Search
+---
+## 1. Searching
+---
+## Linear Search
+---
 - Search for value one by one
 - E.g. IndexOf(), includes()
 - Time Complexity:
@@ -8,7 +11,9 @@
     - Average: O(N)
     - Worst: O(N)
 
-### Binary Search
+---
+## Binary Search
+---
 - Elimate half of the remaining elements at a time
 - Works only in sorted arrays!
 - Divide and Conquer
@@ -17,8 +22,11 @@
     - Average: O(log n)
     - Worst: O(log n)
 
-## Sorting
-### Bubble Sort
+---
+## 2. Sorting
+---
+## Bubble Sort
+---
 - Using **optimized approach**. it can detect already sorted array in first pass with time complexity of O(N)
 - Unless know the data is fairly sorted, this should be avoided
 - Time Complexity:
@@ -28,7 +36,9 @@
 - Space Complexity:
     - O(1)
 
-### Selection Sort
+---
+## Selection Sort
+---
 - Simplest sorting approach. Find the smallest and put it to first.
 - No best case scenario
 - Time Complexity:
@@ -36,7 +46,9 @@
 - Space Complexity:
     - O(1)
 
-### Insertion Sort
+---
+## Insertion Sort
+---
 - For smaller values of N, insertion sort performs efficiently like other quadratic sorting algorithms.
 - Generally used when N is small. For large values of N, it's inefficient.
 - Time Complexity:
@@ -46,7 +58,9 @@
 - Space Complexity:
     - O(1)
 
-### Merge Sort
+---
+## Merge Sort
+---
 - Divide and conquer algorithm, continously divides the array into 2 halves.
 - Using helper function, recurses on both left and right subarrays and merges the two sorted halves.
 - Stable?: **Yes**
@@ -57,7 +71,9 @@
 - Space Complexity:
     - O(n)
 
-### Quick Sort
+---
+## Quick Sort
+---
 - Divide and conquer algorithm, using **pivot**. Can be:
     1. First/last element as pivotor 
     2. Sum all and average it, find the median as pivot
@@ -73,7 +89,9 @@
 - Space Complexity:
     - O(n)
 
-### Radix Sort
+---
+## Radix Sort
+---
 - Unlike previous sortings, it's not a compairison sort.
 - Sorting algo like bucket sort, distributes elements of an array into number of buckets.
 - The difference is that radix sort will 're-bucketing' the array after the initial stage as oppose to sorting each bucket and merging.
@@ -84,4 +102,6 @@
 - Space Complexity:
     - O(n + k)
 
-### Bucket Sort?
+---
+## Bucket Sort?
+---
