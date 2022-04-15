@@ -18,23 +18,36 @@
 ### How does it works?
 
 - Using encryption protocol TLS to encrypt communications(HTTP protocol), formaly known as SSL
-- Protocol secures communications by using ***asymmetric public key infrastructure***. This type of security system uses two different keys to encrypt communications between two parties:
+- Protocol secures communications by using ***asymmetric public key infrastructure***. This type of security system uses two different keys to encrypt communications between two parties using ***CA(Certificate Authority)*** which is self-signed:
     1. The private key - Controlled by the owner of a website. This key lives on a web server and is used to decrypt information encrypted by the public key.
-    2. The public key - Available to everyone who wants to interact with the server in secured manner. Information that’s encrypted by the public key can only be decrypted by the private key.
+    2. The public key - Available to everyone who wants to interact with the server in secured manner. Information that’s encrypted by the public key can only be decrypted by the private key(Matching both private and public key)
+- Client validates Server's Certificate in ***SSL/TLS Handshake*** that produces session keys which forms secure tunnel to protect communication.
+### Secure Sockets Layer (SSL)
+- Uses public key encryption to secure data
+- Ask website to identify themselves by returning a copy of SSL certificate which authenticate the identity of website
+- After identification, then allows exchange of encrypted data.
 
----
+### Transport Layer Security (TLS)
 
-## Transport Layer Protocols (TLP)
+- The latest industry standard of cryptographic protocol which is more updated and secure. Successor to SSL.
 
-#### Transport Layer Security (TLS)
+###### HTTPS is an implementation of TLS encryption on top of the HTTP protocols. Any website that uses HTTPS is therefore employing TLS encryption.
 
-HTTPS is an implementation of TLS encryption on top of the HTTP protocols. Any website that uses HTTPS is therefore employing TLS encryption.
-
-TLS does:
 - Encryption: hides the data being transferred from third parties.
 - Authentication: ensures that the parties exchanging information are who they claim to be.
 - Integrity: verifies that the data has not been forged or tampered with.
 
+#### TLS Handshake Basic steps
+1. TLS initiation - Telling server that it wants to establish secure communication between two, showing cipher suites and TLS version
+2. Server confirmation of protocol - Telling client that is has checked and passes it's certification file together with public key, TLS version and cipher suite.
+3. Certificate verification - Client will verify the certificate...after that it will verify private key and while doing it, it will generate and encrypt a pre-master(Shared secret key) with the server's public key.
+4. Establish shared key(Session Keys) - Server will decrypt the pre-master with it's private key. They calculate a shared session key using pre-master secret and remembers it. Which sents in an encrypted form over the network.
+5. Client Finished - Complete the TLS handshake by sending message to the server that is encrypted with the seesion key. The server decrypts and verifies it by checking if it's match or not.
+6. Server Finished - Server will also do the same thing and client will decrypt, verify and proves to client that the server correctly calculated the session key.
+7. Send secure data - Using symmetric encryption and the shared key.
+
+---
+## Transport Layer Protocols (TLP)
 #### TCP(Connection-oriented transport) and UDP(Connectionless transport)
 
 [Differences 1](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)    
@@ -42,3 +55,6 @@ TLS does:
 
 ---
 
+## Links
+
+[TLS - Computerphile](https://www.youtube.com/watch?v=0TLDTodL7Lc)
