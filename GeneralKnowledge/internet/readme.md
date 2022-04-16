@@ -32,6 +32,14 @@
 
 ---
 
+## Transport Layer Protocols (TLP)
+###### TCP(Connection-oriented transport) and UDP(Connectionless transport)
+
+[Differences 1](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)    
+[Differences 2](https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP)  
+
+---
+
 ### Links
 
 [xml and ajax related](https://www.w3schools.com/xml/default.asp)  
