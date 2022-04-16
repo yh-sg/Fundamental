@@ -46,6 +46,8 @@
 6. Server Finished - Server will also do the same thing and client will decrypt, verify and proves to client that the server correctly calculated the session key.
 7. Send secure data - Using symmetric encryption and the shared key.
 
+###### HTTPS uses asymmetric encryption to establish the identity of the parties and to exchange a symmetric key. Afterwards, symmetric encryption is used since it's faster.
+
 ---
 ## Transport Layer Protocols (TLP)
 #### TCP(Connection-oriented transport) and UDP(Connectionless transport)
