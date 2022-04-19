@@ -32,7 +32,17 @@
 
 ---
 
-## Transport Layer Protocols (TLP)
+# Network Protocol Layers (Top to Bottom)
+
+1. Application (Application Layer Protocol) (E.g. HTTP, HTTPS, FTP, POP etc...)
+2. Transport (Transport Layer Protocol) (E.g TCP, UDP etc)
+3. Internet (Internet Layer Protocol) (IPv4, IPv6)
+4. Network (Link Layer Protocol) (Ethernet - WiFi standards, MAC addresses, switches)
+
+- Network communication splitted into 'layers' with different protocols on each layer
+- Each layer is self-contained and only needs to know how to interface with the layer above and below it
+
+## Transport Layer Protocols (TLP) - Either TCP/UDP
 ###### TCP(Connection-oriented transport) and UDP(Connectionless transport)
 
 [Differences 1](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)    
