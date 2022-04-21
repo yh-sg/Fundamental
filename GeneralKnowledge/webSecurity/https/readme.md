@@ -37,7 +37,7 @@
 - Authentication: ensures that the parties exchanging information are who they claim to be.
 - Integrity: verifies that the data has not been forged or tampered with.
 
-#### TLS Handshake Basic steps
+#### TLS Handshake Basic steps((This example is one-way(server only) handshake, for ***two-way*** client also required to provide certificate)
 1. TLS initiation - Telling server that it wants to establish secure communication between two, showing cipher suites and TLS version
 2. Server confirmation of protocol - Telling client that is has checked and passes it's certification file together with public key, TLS version and cipher suite.
 3. Certificate verification - Client will verify the certificate...after that it will verify private key and while doing it, it will generate and encrypt a pre-master(Shared secret key) with the server's public key.
