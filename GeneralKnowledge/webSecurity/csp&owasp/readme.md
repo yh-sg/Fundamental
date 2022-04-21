@@ -8,7 +8,7 @@
 - With this policy defined, the browser simply throws an error instead of loading script from any other source.
 ###### Why CDN? Some attacks bypass SOP by tricking a site to deliver malicious code like XSS. Browser trusts the source of the content and XSS exploit the trust of content received from the server.
 
-e.g. Wants all content to come from the site's own origin, restrict audio or video media to trusted providers, but not JavaScript or other potentially dangerous content etc...
+e.g. Wants all content to come from the site's own origin, restrict only allow audio or video media to trusted providers, but not JavaScript or other potentially dangerous content etc...
 
 ---
 

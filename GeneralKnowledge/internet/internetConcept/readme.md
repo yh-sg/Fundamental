@@ -10,12 +10,13 @@
 
 ## Domain Name System(DNS)
  - A domain name gets the IP address rather than you need to memorize address such as 111.111.111.111
- - First, when url is clicked. It will check cache(which can be OS/browser/router) otherwise on internet it will check the 4 servers.
- - Recursive server - DNS resolver which keeps on asking start from root to TLD to Authoritative. Afterwards, it'll cache.
-    1. DNS Root Name Server(Index of all the servers that will have the information being queried.) 
-    2. (Top level domain)TLD name server (.com) 
-    3. Authoritative name server (google.com) 
-    4. Get IP Address!! Cache it with common ones like browser/OS/Recursive Resolver. (Security issue -> Cache poisoning)
+ - First, when url is clicked. It will check DNS cache(aka DNS resolver cache which can be OS/browser/router) otherwise on internet it will check the 4 servers.
+ - Recursive server - **(1)** DNS resolver which keeps on asking (***Iterative query***) starting from **(2)** root to **(3)** TLD to **(4)** Authoritative. Afterwards, it'll cache.
+    1. A user types `example.com` into a web browser and the query travels into the Internet and is received by a DNS recursive resolver.
+    2. DNS Root Name Server(Index of all the servers that will have the information being queried.) 
+    3. (Top level domain)TLD name server (.com) 
+    4. Authoritative name server (google.com) 
+    5. Get IP Address!! Cache it with common ones like browser/OS/Recursive Resolver. (Security issue -> Cache poisoning, placing false information in DNS cache)
 
 - (wikipedia.org)domain name -> (en.wikipedia.org/zh.wikipedia.org/jp.wikipedia.org)subdomains
 
@@ -29,7 +30,7 @@
 
 ##### http://www.something.com:80/path/to/myfile.html?key1=value1&key2=value2#somewhereInTheDocument
 
-- Scheme(http) -> Protocol((A set method for exchanging or transferring data around a computer network) that the browser must use to request the resource.
+- Scheme(http) -> ***Protocol*** (A set method for exchanging or transferring data around a computer network) that the browser must use to request the resource.
 - Authority(www.something.com:80) -> www.something.com is the domain name | 80 is the port[Usually it's ommitted it using standard portocol 80(HTTP), 443(HTTPS)] to grant access to its resources. Otherwise, it's mandatory.
 - Path to resource(/path/to/myfile.html)
 - Parameters(?key1=value1&key2=value2) -> key/value pairs separated with the & symbol.
@@ -60,7 +61,7 @@
 ### Wireless Access Point(sub-device)
 - Internet -> Modem -> Router -> Wireless AP(Does not have WAN port while router have, thus it needs router)
 - Theoritically, can just use wi-fi router but it's harder to manage. AP is much easier to manage.
-- Does not have firewall and DHCP service(assign different IP address to devices) compare to router
+- Does not have firewall and DHCP(Dynamic Host Configuration Protocol) service(assign different IP address to devices) compare to router
 
 ### Reliability
 

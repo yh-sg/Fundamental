@@ -48,6 +48,9 @@
 
 ###### HTTPS uses asymmetric encryption to establish the identity of the parties and to exchange a symmetric key. Afterwards, symmetric encryption is used since it's faster.
 
+- Asymmetric encryption depends on two(private and public) keys. Encrypt with the public key ***(3)*** and decrypt it with the private key. ***(4)*** 
+- In symmetric encryption, ***(7)*** the same session key is used to encrypt and decrypt the message. Unlike hashes, everytime the message is randomized to produce a different output.
+
 ---
 
 ## Links
