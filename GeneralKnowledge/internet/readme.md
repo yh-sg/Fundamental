@@ -114,52 +114,55 @@
     <tbody>
         <tr>
             <td>Connection</td>
-            <td></td>
-            <td></td>
+            <td>Connection-oriented protocol. Communicating devices should establish a connection (3-way handshakes with SYN and ACK) before transmitting data and should close the connection after transmitting the data (4-way handshakes with FIN and ACK).</td>
+            <td>Connectionless protocol. No establish of for opening a connection, maintaining a connection, and terminating a connection for data transfer. No handshakes.</td>
         </tr>
         <tr>
             <td>Segmentation</td>
-            <td></td>
-            <td></td>
+            <td>Support Segmentation, highly reliable and packets arrive in order</td>
+            <td>Does not support Segmentation, not reliable and packets arrive out of order</td>
         </tr>
         <tr>
             <td>Error checking?</td>
-            <td></td>
-            <td></td>
+            <td>Provides flow control and acknowledgment of data. When delivery does not get ACK for an amount of time, it'll do retransmission of lost packets</td>
+            <td>Lacks error checking(basic error checking of checksums only) and correction, no congestion control</td>
         </tr>
         <tr>
             <td>Speed/Weight</td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Handshakes</td>
-            <td></td>
-            <td></td>
+            <td>Slow / 20 Bytes</td>
+            <td>Fast / 8 Bytes</td>
         </tr>
         <tr>
             <td>Use Cases?</td>
-            <td></td>
-            <td></td>
+            <td>Email, texting, Web, SSH, file transfers</td>
+            <td>DNS, DHCP ,Computer gaming, voice/video communication, live conferences, streaming</td>
+        </tr>
+        <tr>
+            <td>Why?</td>
+            <td>
+                <h6>TCP</h6>
+                <ul>
+                    <li>Data loss can't be tolerated and in-order delivery is needed</li>
+                    <li>Delivery Acknowledgements needed</li>
+                    <li>Security(handshakes)</li>
+                </ul>
+            </td>
+            <td>
+                <h6>UDP</h6>
+                <ul>
+                    <li>Data loss can be masked - few small bytes</li>
+                    <li>Less overhead(fast) and delay is undesirable which doesn't deteriorate performance</li>
+                    <li>Data loss can be masked - few small bytes</li>
+                    <li>Small transactions like DNS lookups.</li>
+                </ul>
+            </td>
         </tr>
     </tbody>
 </table>
 
-###### TCP
-- Highly reliable
-- Slow
-- Support Segmentation
-- Use cases: Connection establishment(3 way handshake), data transfer, connection termination(4 way handsake)
-
-###### UDP
-- Less reliable (Lacks error checking and correction)
-- Fast
-- Does not Support Segmentation
-- Use cases: DNS, DHCP, SNMP, RIP, Streaming
-
 ##### Fun facts:
 - I’ve got a really good UDP joke to tell you, but I don’t know if you’ll ever get it or not...=(
-- Good teachers uses TCP(get to know each other before I give you my input), but most students/bad teachers uses UDP(take my input and like it!)
+- Good teachers uses TCP (get to know each other before I give you my input), but most students/bad teachers uses UDP (take my input and like it!)
 
 ---
 
