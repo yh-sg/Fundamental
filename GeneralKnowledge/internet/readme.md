@@ -140,7 +140,6 @@
         <tr>
             <td>Why?</td>
             <td>
-                <h6>TCP</h6>
                 <ul>
                     <li>Data loss can't be tolerated and in-order delivery is needed</li>
                     <li>Delivery Acknowledgements needed</li>
@@ -148,7 +147,6 @@
                 </ul>
             </td>
             <td>
-                <h6>UDP</h6>
                 <ul>
                     <li>Data loss can be masked - few small bytes</li>
                     <li>Less overhead(fast) and delay is undesirable which doesn't deteriorate performance</li>
