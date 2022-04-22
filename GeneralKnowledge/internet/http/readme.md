@@ -14,28 +14,33 @@
     - HTTP request headers
     - Optional HTTP body
 
-What’s an HTTP method?
-- HTTP verb(It indicates the action that the HTTP request expects from the queried server) - GET/POST/PUT(Entire content replacement)/PATCH(Partial Modification)/DELETE
+##### What’s an HTTP method?
 
-What are HTTP request headers?
+- HTTP verb (It indicates the action that the HTTP request expects from the queried server) - GET/POST/PUT(Entire content replacement)/PATCH(Partial Modification)/DELETE
+
+##### What are HTTP request headers?
+
 - Text information stored in key-value pairs
 - Communicate core information such as what browser the client is using what data is being requested.
 - Example:
     ```{Authorization: BASIC Z3Vlc3Q6Z3Vlc3QxMjM=, Cookie: name=value,  Allow: GET, HEAD, PUT, Accept: text/plain, Content-type: application/json  etc...}```
 
-What’s in an HTTP request body?
+##### What’s in an HTTP request body?
+
 - Body of an HTTP request contains any information being submitted to the web server like form data.
 
 ## HTTP response
 
 - Web clients (often browsers) receive from server in answer to an HTTP request. 
 
-HTTP response contains:
+##### HTTP response contains:
+
 1. An HTTP status code
 2. HTTP response headers
 3. Optional HTTP body
 
-What’s an HTTP status code?
+##### What’s an HTTP status code?
+
 - 3-digit codes most often used to indicate whether an HTTP request has been successfully completed. Status codes are broken into the following 5 blocks:
     - 1xx Informational
     - 2xx Success
@@ -43,18 +48,21 @@ What’s an HTTP status code?
     - 4xx Client Error
     - 5xx Server Error
 
-What are HTTP response headers?
+##### What are HTTP response headers?
+
 - Convey important information such as the language and format of the data being sent in the response body.
 - Example:
     ```{date: Thu, 21 Mar 2000 12:00:00 GMT, status: 200, content-type: text/html ,etc.....}```
 
-What’s in an HTTP response body?
+##### What’s in an HTTP response body?
+
 - In most web requests, this is HTML data which a web browser will translate into a web page.
 
-What's a Protocol?
+##### What's a Protocol?
+
 - A protocol is a system of rules that define how data is exchanged within or between computers. Communications between devices require that the devices agree on the format of the data that is being exchanged. The set of rules that defines a format is called a protocol.
 
-What is HTTPS? ***More will be covered on web security***
+##### What is HTTPS? ***More will be covered on web security***
 - HTTPS(Hypertext Transfer Protocol sercure)
 - Data sent is encrypted (Secure Socket Layer[SSL]/Transport Layer Security[TLS])
 - Install certificate on web host
@@ -63,8 +71,10 @@ What is HTTPS? ***More will be covered on web security***
 
 ## URL
 
-What happen when a website is being clicked? e.g. https://en.wikipedia.org/wiki/The_Lord_of_the_Rings 
-Let's break it(URL) down!
+##### What happen when a website is being clicked? e.g. https://en.wikipedia.org/wiki/The_Lord_of_the_Rings 
+
+###### Let's break it(URL) down!
+
 1. Scheme (https://) -> Tells browser to make a connection with TLS which encryptes the data... others like ftp://, mailto://, or file://. These are other protocols that browsers know how to handle.
 2. Domain (en.wikipedia.org) -> Domain name of the site. It is the memorable address which points to a specific server’s IP address.
 3. Path (/wiki) -> is the path on the server to the requested resource... think of it as directory structure of files and other directories on computer. It’s a way to organize resources regardless of static or dynamic files.

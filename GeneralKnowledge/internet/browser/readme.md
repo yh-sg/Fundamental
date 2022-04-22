@@ -8,7 +8,7 @@
 - UI Backend - (Drawing basic widgets (Shapes like rectangle/square etc)
 - Data Storage/Persistence - (Persistent layer: A web browser needs to store various types of data locally, for example, cookies. As a result, browsers must be compatible with data storage mechanisms such as WebSQL, IndexedDB, FileSystem, etc.)
 
-![alt text](../images/browser.png)
+![alt text](../../images/browser.png)
 
 ---
 
@@ -24,7 +24,7 @@ Whenever button/links are clicked, or just by simply dragging the web....DOM tre
 
 ---
 
-![alt text](../images/Dom-Tree-of-An-Example-Web-Page.png)
+![alt text](../../images/Dom-Tree-of-An-Example-Web-Page.png)
 
 ---
 
