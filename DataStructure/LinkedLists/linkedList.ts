@@ -31,23 +31,73 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
         let node = new SingleLinkedListNode(val);
         this.head = node;
         this.tail = node;
+        this.length = 1;
     }
-    append(data: T): void {
-        throw new Error("Method not implemented.");
+
+    append(val: T): boolean {
+        let node = new SingleLinkedListNode(val);
+        this.tail.next = node;
+        this.tail = node;
+        this.length++;
+        return true;
     }
-    traverse(): void {
-        throw new Error("Method not implemented.");
+
+    traverse(): T[] {
+        let current = this.head;
+        let arr = [];
+        while(current){
+            arr.push(current.val)
+            current = current.next;
+        }
+        return arr
     }
-    prepend(data: T): void {
-        throw new Error("Method not implemented.");
+
+    prepend(val: T): boolean {
+        let node = new SingleLinkedListNode(val);
+        node.next = this.head;
+        this.head = node;
+        this.length++;
+        return true;
     }
-    insert(data: T, index: number): void {
-        throw new Error("Method not implemented.");
+
+    insert(val: T, index: number): boolean {
+        
+        //Length validation
+        if(index>this.length||index<0) return false;
+        //If last index
+        if(index===this.length) return !!this.append(val);
+        //If first index
+        if(index===0) return !!this.prepend(val);
+
+        //Do search for previous and after using get method
+        
+        let node = new SingleLinkedListNode(val),
+            previousNode = this.get(index-1), //Previous Node
+            nextNode = previousNode.next;
+
+        previousNode.next = node;
+        node.next = nextNode;
+        
+        this.length++;
+        return true;
     }
+    
     get(index: number):SingleLinkedListNode<T> {
-        throw new Error("Method not implemented.");
+        let counter = 0,
+            current = this.head;
+        while(counter!=index){
+            current = current.next;
+            counter++;
+        }
+        return current;
     }
 
 }
 
 let list = new SinglyLinkedList(1);
+list.append(2);
+list.append(3);
+list.insert(2.5,0)
+// list.append(4);
+// list.prepend(0);
+console.log(list.traverse());

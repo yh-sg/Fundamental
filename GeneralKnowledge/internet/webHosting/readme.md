@@ -55,6 +55,6 @@
 
 #### Important notes to self so that it's not confusing:
 - Shared hosting ‘share’ space(bandwidth, storage, memory etc...) on a server with other websites. This can be thought of like renting a room in a shared house – you’ve got your own little area, but you’re part of a larger space.
-- VPS hosting similarly as shared hosting but it provides dedicated virtual partition for each user, making sure resources are always available. Have a good resource that don't need to share with anyone. This can be thought of like renting a condo with many apartments but small dedicated space. 
+- VPS hosting similarly as shared hosting but it provides dedicated virtual partition for each user, making sure resources are always available. Have a good resource that don't need to share with anyone. This can be thought of like renting a condo with many apartments but small **dedicated** space. 
 - VPS(One server) vs Cloud(Multiple Server -> pulls multiple resources)
 - How can you imagine? Imagine cloud is a house yet have multiple electricity resources so even if one down it will still work by replacing. 

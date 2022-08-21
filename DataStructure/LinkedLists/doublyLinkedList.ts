@@ -20,16 +20,16 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
         this.head = node;
         this.tail = node;
     }
-  append(data: T): void {
+  append(val: T): boolean {
     throw new Error("Method not implemented.");
   }
-  traverse(): void {
+  traverse(): [] {
     throw new Error("Method not implemented.");
   }
-  prepend(data: T): void {
+  prepend(val: T): boolean {
     throw new Error("Method not implemented.");
   }
-  insert(data: T, index: number): void {
+  insert(val: T, index: number): void {
     throw new Error("Method not implemented.");
   }
   get(index: number): DoubleLinkedListNODE<T> | SingleLinkedListNode<T> {

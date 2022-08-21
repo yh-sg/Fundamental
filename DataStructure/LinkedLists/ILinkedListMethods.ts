@@ -14,9 +14,9 @@ import { SingleLinkedListNode } from "./linkedList";
 // reverse: reverse the whole linked list - O(n)
 
 export interface ILinkedListMethods<T>{
-    append(data: T):void;
-    traverse():void
-    prepend(data:T):void
-    insert(data:T, index:number):void
+    append(val: T):boolean;
+    traverse():T[];
+    prepend(val:T):boolean
+    insert(val:T, index:number):void
     get(index:number):SingleLinkedListNode<T>|DoubleLinkedListNODE<T>;
 }
