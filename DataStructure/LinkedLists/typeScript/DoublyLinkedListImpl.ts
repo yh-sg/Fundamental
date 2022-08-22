@@ -1,5 +1,5 @@
-import { ILinkedListMethods } from "./ILinkedListMethods";
-import { SingleLinkedListNode } from "./linkedList";
+import { ILinkedListMethods } from "./LinkedList";
+import { SingleLinkedListNode } from "./SinglyLinkedListImpl";
 
 // Two pointers and val
 export class DoubleLinkedListNODE<T> extends SingleLinkedListNode<T> {
@@ -45,7 +45,7 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
   set(val: T): boolean {
     throw new Error("Method not implemented.");
   }
-  remove(val: T, index: number): void {
+  remove(index: number): void {
     throw new Error("Method not implemented.");
   }
   reverse(): T[] {

@@ -1,6 +1,6 @@
 //?What is a linked list?
 
-import { ILinkedListMethods } from "./ILinkedListMethods";
+import { ILinkedListMethods } from "./LinkedList";
 
 //Data Structure that contains a head, tail and length property
 //LL consist of nodes, and each node has a value(piece of data) and a pointer(next) to another node or null
@@ -102,16 +102,64 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
     }
     
     shift(): boolean {
-        throw new Error("Method not implemented.");
+        if(this.length<=0) //length validation
+            return false;
+
+        if(this.length===1){ //Handle 1 element
+            this.head=null;
+            this.tail=null;
+        }else{
+            let futureHead = this.get(1);
+            this.head.next = null;
+            this.head=futureHead;
+        } //!handle head
+        this.length--;
+        return true;
     }
 
     pop(): boolean {
+        if(this.length<=0) //length validation
+            return false;
+
+        if(this.length===1){ //Handle 1 element
+            this.head=null;
+            this.tail=null;
+        }else{
+            let futureTail = this.get(this.length-2);
+            futureTail.next = null;
+            this.tail=futureTail;
+        } //!handle tail  
+        this.length--;
+        return true;
+    }
+
+    remove(index: number): boolean {
+        if(index>=this.length||index<0) //length & index validation 
+            return false; 
+
+        if(index==0) //Handle 0 index
+            return !!this.shift(); 
+        
+        if(this.length==1){ //Handle 1 element
+            this.head=null;
+            this.tail=null;
+        }else{
+            //Get removednode, previous and afternode.
+            let previousNode = this.get(index-1),
+            removedNode = previousNode.next,
+            AfterNode = removedNode.next;
+            removedNode.next=null;
+            previousNode.next=AfterNode;
+        }
+        this.length--;
+        return true;
+    }
+
+    set(val: T, index: number): boolean {
         throw new Error("Method not implemented.");
     }
-    set(val: T): boolean {
-        throw new Error("Method not implemented.");
-    }
-    remove(val: T, index: number): void {
+
+    reverse(): T[] {
         throw new Error("Method not implemented.");
     }
 
@@ -119,10 +167,12 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 
 let list = new SinglyLinkedList();
 // console.log(list);
-list.append(2);
+list.append(1);
 list.prepend(0);
 list.append(2);
-list.append(2);
+list.append(3);
+list.insert(2.5,3);
+list.insert(3.5,5);
 
 console.log(list.traverse());
 console.log(list);
