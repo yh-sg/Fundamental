@@ -1,4 +1,4 @@
-import { DoubleLinkedListNODE } from "./DoublyLinkedListImpl";
+import { DoubleLinkedListNode } from "./DoublyLinkedListImpl";
 import { SingleLinkedListNode } from "./SinglyLinkedListImpl";
 
 // Methods
@@ -18,7 +18,7 @@ export interface ILinkedListMethods<T>{
     traverse():T[];
     prepend(val:T):boolean
     insert(val:T, index:number):void
-    get(index:number):SingleLinkedListNode<T>|DoubleLinkedListNODE<T>;
+    get(index:number):SingleLinkedListNode<T>|DoubleLinkedListNode<T>;
     shift():boolean
     pop():boolean
     set(val:T, index: number):boolean

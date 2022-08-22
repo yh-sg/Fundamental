@@ -156,11 +156,35 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
     }
 
     set(val: T, index: number): boolean {
-        throw new Error("Method not implemented.");
+        let searchNode = this.get(index)
+        console.log(searchNode)
+        if(!searchNode)
+            return false;
+        else
+            searchNode.val=val;
+        return true;
     }
 
     reverse(): T[] {
-        throw new Error("Method not implemented.");
+
+        // Temp variables - prev, next and node
+        let node = this.head,
+            prev = null,
+            next = null;
+
+        // Get new head and tail
+        this.head = this.tail;
+        this.tail = node;
+
+        //loop through the whole length of LL
+        for (let i = 0; i < this.length; i++) {
+            next = node.next; //First step is to store the next node on next variable
+            node.next = prev; //Next step is to destroy the node linkage by pointing to previous node 
+            prev = node; //update previous node
+            node = next //update node
+        }
+
+        return this.traverse();
     }
 
 }
@@ -173,6 +197,7 @@ list.append(2);
 list.append(3);
 list.insert(2.5,3);
 list.insert(3.5,5);
-
+list.set(99,5);
+list.reverse();
 console.log(list.traverse());
 console.log(list);

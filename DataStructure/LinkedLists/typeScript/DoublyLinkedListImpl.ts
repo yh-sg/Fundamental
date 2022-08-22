@@ -2,8 +2,8 @@ import { ILinkedListMethods } from "./LinkedList";
 import { SingleLinkedListNode } from "./SinglyLinkedListImpl";
 
 // Two pointers and val
-export class DoubleLinkedListNODE<T> extends SingleLinkedListNode<T> {
-  protected prev: DoubleLinkedListNODE<T>|null = null;
+export class DoubleLinkedListNode<T> extends SingleLinkedListNode<T> {
+  protected prev: DoubleLinkedListNode<T>|null = null;
   constructor(data: T) {
       super(data);
   }
@@ -11,14 +11,14 @@ export class DoubleLinkedListNODE<T> extends SingleLinkedListNode<T> {
 
 class DoubleLinkedList<T> implements ILinkedListMethods<T>{
     //head, tail and length property
-    protected head: DoubleLinkedListNODE<T>;
-    protected tail: DoubleLinkedListNODE<T>;
+    protected head: DoubleLinkedListNode<T>;
+    protected tail: DoubleLinkedListNode<T>;
     protected length: number;
     // must have a value
-    constructor(val:T){
-        let node = new DoubleLinkedListNODE(val);
-        this.head = node;
-        this.tail = node;
+    constructor(val?:T){
+      this.head = new DoubleLinkedListNode(val) ?? null;
+      this.tail = new DoubleLinkedListNode(val) ?? null;
+      this.length = val ? 1 : 0;
     }
 
   append(val: T): boolean {
@@ -33,7 +33,7 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
   insert(val: T, index: number): void {
     throw new Error("Method not implemented.");
   }
-  get(index: number): DoubleLinkedListNODE<T> | SingleLinkedListNode<T> {
+  get(index: number): DoubleLinkedListNode<T> | SingleLinkedListNode<T> {
     throw new Error("Method not implemented.");
   }
   shift(): boolean {
@@ -54,4 +54,4 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
 
 }
 
-const DLL = new DoubleLinkedListNODE(1);
+const DLL = new DoubleLinkedList(1);
