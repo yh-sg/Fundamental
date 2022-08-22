@@ -20,6 +20,7 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
         this.head = node;
         this.tail = node;
     }
+
   append(val: T): boolean {
     throw new Error("Method not implemented.");
   }
@@ -33,6 +34,21 @@ class DoubleLinkedList<T> implements ILinkedListMethods<T>{
     throw new Error("Method not implemented.");
   }
   get(index: number): DoubleLinkedListNODE<T> | SingleLinkedListNode<T> {
+    throw new Error("Method not implemented.");
+  }
+  shift(): boolean {
+    throw new Error("Method not implemented.");
+  }
+  pop(): boolean {
+    throw new Error("Method not implemented.");
+  }
+  set(val: T): boolean {
+    throw new Error("Method not implemented.");
+  }
+  remove(val: T, index: number): void {
+    throw new Error("Method not implemented.");
+  }
+  reverse(): T[] {
     throw new Error("Method not implemented.");
   }
 
