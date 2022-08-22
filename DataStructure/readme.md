@@ -25,19 +25,7 @@
     - Search: O(N)
     - Access: O(1)
 ---
-## Linked List
----
-- A Linked List is a linear collection of data elements(nodes). Using pointer, each node points to the next node. These group of nodes together represent a sequence.
-- Excellent alternative to arrays when insertion and deletion at the beginning are frequently required.
-- SLL: Linked list which each nodes points to the next node, whereas the last node is null.
-- DLL: Similar to SLL but with 2 pointers which traget next and previous node.(Take up more memory due to extra pointer)
-- CLL: Last Node point back to first node
-- Time Complexity:
-    - Insert: O(1)
-    - Remove: Depends..O(1) or O(N)
-    - Search: O(N)
-    - Access: O(N)
----
+
 ## Stack
 ---
 - Collection of elements with two basic principle of operation: Push and pop.
@@ -76,10 +64,6 @@
     - Remove: O(log(n))
     - Search: O(log(n))
     - Access: O(log(n))
-
-### Trie?
-### Fenwick tree?
-### Segment tree?
 
 ---
 ### Heap
