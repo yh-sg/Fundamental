@@ -38,26 +38,7 @@
     - Search: O(N)
     - Access: O(N)
 ---
-## Stack
----
-- Collection of elements with two basic principle of operation: Push and pop.
-- LIFO(Last in, first out): Most recently added object is the first to be removed.
-- Time Complexity:
-    - Insert: O(1)
-    - Remove: O(1)
-    - Search: O(N)
-    - Access: O(N)
 
----
-## Queue
----
-- Collection of elements with two basic principle of operation: Enqueue and dequeue.
-- FIFO(First in, first out): The first added object is the first to be removed 
-- Time Complexity:
-    - Insert: O(1)
-    - Remove: O(1)
-    - Search: O(n)
-    - Access: O(n)
 
 ---
 ## Binary Tree
