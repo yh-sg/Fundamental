@@ -2,7 +2,7 @@ import { NODE } from "./stacksAndQueue";
 
 interface ICommonMethod<T>{
     isEmpty():boolean;
-    peek():T;
+    peek():T | undefined ;
     traverse():T[];
 }
 
