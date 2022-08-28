@@ -15,4 +15,4 @@ SPR:
 - Example will be persistence(repository layer), business logic(service layer)
 
 OCP:
-
+- 
