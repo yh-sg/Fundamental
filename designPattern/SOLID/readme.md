@@ -15,4 +15,17 @@ SPR:
 - Example will be persistence(repository layer), business logic(service layer)
 
 OCP:
-- 
+- Classes should be open for extension but closed for modification
+- If could follow it strongly enough, it's possible to modify the behavior of the code without ever touching a piece of original code
+
+LSP:
+- Able to subsitute a base type for a subtype
+- Without compromising the outcome
+- If it looks like a duck, quacks like a duck. But if needs batteries - You prabably have the wrong abstraction.
+
+ISP:
+- Don't put too much into an interface; split into separate interfaces
+- YAGNI
+
+DIP:
+- High-level modules should not depend upon low-level ones; use abstractions 
