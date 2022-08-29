@@ -24,6 +24,7 @@ LSP:
 - If it looks like a duck, quacks like a duck. But if needs batteries - You prabably have the wrong abstraction.
 
 ISP:
+- A client should never be forced to implement an interface that it doesn’t use any of the methods.
 - Don't put too much into an interface; split into separate interfaces
 - YAGNI
 
