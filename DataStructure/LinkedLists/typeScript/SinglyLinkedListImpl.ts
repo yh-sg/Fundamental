@@ -10,9 +10,11 @@ import { ILinkedListMethods } from "./LinkedList";
 //Connected via nodes with a next pointer
 //Random access is not allowed | Can Quickly be accessed at a specific index
 
+type TSingleLinkedListNode<T> = SingleLinkedListNode<T|undefined>|null;
+
 export class SingleLinkedListNode<T> {
     public val: T;
-    public next: SingleLinkedListNode<T>|null;
+    public next: TSingleLinkedListNode<T>;
     constructor(data: T) {
         this.val = data;
         this.next = null;
@@ -22,8 +24,8 @@ export class SingleLinkedListNode<T> {
 class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 
     //head, tail and length property
-    protected head: SingleLinkedListNode<T>;
-    protected tail: SingleLinkedListNode<T>;
+    protected head: TSingleLinkedListNode<T>;
+    protected tail: TSingleLinkedListNode<T>;
     protected length: number;
 
     // must have a value or empty
@@ -39,7 +41,7 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
             this.tail = node;
             this.head = node;
         }else{
-            this.tail.next = node;
+            this.tail!.next = node;
             this.tail = node;
         }
         this.length++;
@@ -48,10 +50,12 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 
     traverse(): T[] {
         let current = this.head;
-        let arr = [];
+        let arr:T[] = [];
+        if(this.length===0)
+            return [];
         while(current){
-            arr.push(current.val)
-            current = current.next;
+            arr.push(current.val!);
+            current = current.next!;
         }
         return arr
     }
@@ -80,22 +84,22 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
         //Do search for previous and after using get method
         let node = new SingleLinkedListNode(val),
             previousNode = this.get(index-1), //Previous Node
-            nextNode = previousNode.next;
+            nextNode = previousNode!.next;
 
-        previousNode.next = node;
+        previousNode!.next = node;
         node.next = nextNode;
         this.length++;
         
         return true;
     }
     
-    get(index: number):SingleLinkedListNode<T> {
+    get(index: number):TSingleLinkedListNode<T> {
         if(index<0||index>=this.length) //index validation
             return null;
         let counter = 0,
             current = this.head;
-        while(counter!=index){
-            current = current.next;
+        while(counter!=index&&current!=null){
+            current = current.next!;
             counter++;
         }
         return current;
@@ -110,7 +114,7 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
             this.tail=null;
         }else{
             let futureHead = this.get(1);
-            this.head.next = null;
+            this.head!.next = null;
             this.head=futureHead;
         } //!handle head
         this.length--;
@@ -126,7 +130,7 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
             this.tail=null;
         }else{
             let futureTail = this.get(this.length-2);
-            futureTail.next = null;
+            futureTail!.next = null;
             this.tail=futureTail;
         } //!handle tail  
         this.length--;
@@ -146,10 +150,10 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
         }else{
             //Get removednode, previous and afternode.
             let previousNode = this.get(index-1),
-            removedNode = previousNode.next,
-            AfterNode = removedNode.next;
-            removedNode.next=null;
-            previousNode.next=AfterNode;
+                removedNode = previousNode!.next,
+                AfterNode = removedNode!.next;
+                removedNode!.next=null;
+                previousNode!.next=AfterNode;
         }
         this.length--;
         return true;
@@ -167,10 +171,13 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 
     reverse(): T[] {
 
+        if(this.length<=0)
+            return [];
+
         // Temp variables - prev, next and node
         let node = this.head,
-            prev = null,
-            next = null;
+            prev:TSingleLinkedListNode<T> = null,
+            next:TSingleLinkedListNode<T> = null;
 
         // Get new head and tail
         this.head = this.tail;
@@ -178,8 +185,8 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 
         //loop through the whole length of LL
         for (let i = 0; i < this.length; i++) {
-            next = node.next; //First step is to store the next node on next variable
-            node.next = prev; //Next step is to destroy the node linkage by pointing to previous node 
+            next = node!.next; //First step is to store the next node on next variable
+            node!.next = prev; //Next step is to destroy the node linkage by pointing to previous node 
             prev = node; //update previous node
             node = next //update node
         }
@@ -190,14 +197,13 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 }
 
 let list = new SinglyLinkedList();
+// list.append(1);
+// list.prepend(0);
+// list.append(2);
+// list.append(3);
+// list.insert(2.5,3);
+// list.insert(3.5,5);
+// list.set(99,5);
+// list.reverse();
+// console.log(list.traverse());
 // console.log(list);
-list.append(1);
-list.prepend(0);
-list.append(2);
-list.append(3);
-list.insert(2.5,3);
-list.insert(3.5,5);
-list.set(99,5);
-list.reverse();
-console.log(list.traverse());
-console.log(list);

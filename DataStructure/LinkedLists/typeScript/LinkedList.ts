@@ -18,7 +18,7 @@ export interface ILinkedListMethods<T>{
     traverse():T[];
     prepend(val:T):boolean
     insert(val:T, index:number):void
-    get(index:number):SingleLinkedListNode<T>|DoubleLinkedListNode<T>;
+    get(index:number):SingleLinkedListNode<T|undefined>|DoubleLinkedListNode<T>|null;
     shift():boolean
     pop():boolean
     set(val:T, index: number):boolean
