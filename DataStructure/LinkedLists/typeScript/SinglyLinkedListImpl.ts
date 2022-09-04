@@ -197,13 +197,13 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
 }
 
 let list = new SinglyLinkedList();
-// list.append(1);
-// list.prepend(0);
-// list.append(2);
-// list.append(3);
-// list.insert(2.5,3);
-// list.insert(3.5,5);
-// list.set(99,5);
-// list.reverse();
-// console.log(list.traverse());
-// console.log(list);
+list.append(1);
+list.prepend(0);
+list.append(2);
+list.append(3);
+list.insert(2.5,3);
+list.insert(3.5,5);
+list.set(99,5);
+list.reverse();
+console.log(list.traverse());
+console.log(list);
