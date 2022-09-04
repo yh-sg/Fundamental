@@ -25,3 +25,7 @@ export interface ILinkedListMethods<T>{
     remove(index:number):void
     reverse():T[]
 }
+
+export interface IDoublyLinkedListMethods<T> extends ILinkedListMethods<T>{
+    reverseTraverse():T[];
+}

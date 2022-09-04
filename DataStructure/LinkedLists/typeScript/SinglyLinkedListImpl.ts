@@ -142,7 +142,7 @@ class SinglyLinkedList<T> implements ILinkedListMethods<T>{
             return false; 
 
         if(index==0) //Handle 0 index
-            return !!this.shift(); 
+            return this.shift(); 
         
         if(this.length==1){ //Handle 1 element
             this.head=null;
@@ -206,4 +206,3 @@ list.insert(3.5,5);
 list.set(99,5);
 list.reverse();
 console.log(list.traverse());
-console.log(list);
