@@ -1,135 +1,175 @@
-# Internet
-
-#### Some terminology to look out for....
-
-- Network (Devices that are connected to each other....) whereas Internet (global network of networks communicate through a standardized set of protocols)
-
-- Internet is just the network of the networks.
-
-- Decentralization - Nobody owns/controls it.
+# Summary
 
 ---
 
-## Domain Name System(DNS)
- - A domain name gets the IP address rather than you need to memorize address such as 111.111.111.111
- - First, when url is clicked. It will check cache(which can be OS/browser/router) otherwise on internet it will check the 4 servers.
- - Recursive server - DNS resolver which keeps on asking start from root to TLD to Authoritative. Afterwards, it'll cache.
-    1. DNS Root Name Server(Index of all the servers that will have the information being queried.) 
-    2. (Top level domain)TLD name server (.com) 
-    3. Authoritative name server (google.com) 
-    4. Get IP Address!! Cache it with common ones like browser/OS/Recursive Resolver. (Security issue -> Cache poisoning)
+## Client
 
-- (wikipedia.org)domain name -> (en.wikipedia.org/zh.wikipedia.org/jp.wikipedia.org)subdomains
-
-- 2 types of top level domain names.
-    1. Generic top-level domains (TLDs) such as .com, .edu, .org, .gov --- Authority over these domains is usually delegated to private organizations.
-    2. country-code top-level domains (ccTLDs) such as .sg .jp .io --- Administered by authorities in each country.
+![alt text](../images/part1.jpg)
 
 ---
 
-### URL(Uniform Resource Locator)
+## What is AJAX?
 
-##### http://www.something.com:80/path/to/myfile.html?key1=value1&key2=value2#somewhereInTheDocument
+- AJAX = Asynchronous JavaScript And XML.
 
-- Scheme(http) -> Protocol((A set method for exchanging or transferring data around a computer network) that the browser must use to request the resource.
-- Authority(www.something.com:80) -> www.something.com is the domain name | 80 is the port[Usually it's ommitted it using standard portocol 80(HTTP), 443(HTTPS)] to grant access to its resources. Otherwise, it's mandatory.
-- Path to resource(/path/to/myfile.html)
-- Parameters(?key1=value1&key2=value2) -> key/value pairs separated with the & symbol.
-- Anchor(#somewhereInTheDocument) -> Anchor("bookmark") to another part of the resource(id). giving the browser the directions to kocat at that "bookmarked" spot
+- AJAX just uses a combination of:
+    - A browser built-in XMLHttpRequest object (to request data from a web server)
+    - JavaScript and HTML DOM (to display or use the data)
 
----
+**Advantages**
+- Update a web page without reloading the page
+- Request data from a server - after the page has loaded
+- Receive data from a server - after the page has loaded
+- Send data to a server - in the background
 
-### IP(Internet protocol) address
-
- - IPv4(N.N.N.N where N is binary ranging 0-255 aka 32-bit(2^32) address) vs IPv6(X:X:X:X:X:X:X:X in hexadecimal whereas zeroes are omitted aka 128 bit address)
- - Dynamic IP addresses vs Static IP addresses
-
-### Switch(Cannot use wireless technology, use access point(Big company/places) for wireless which gives Wi-Fi signal) 
-
-- Allow computers in the same environment to communicate with each other with cables to lan ports...
-- LAN (Local access network) connects devices within a restricted area
-
-### Packet
-
-- Data which were being chopped/divided into packets and being sent to other devices through the cables of the internet
-- 2 parts -> 1) Header(Informations like source/destination/length of the packet) 2) Checksum value(Detect if a packet was damaged or not)
-
-### 
-
-### Router
-
-- Enable devices to connect to the internet. In home, it's connected with cable by ISP (Internet Service Provider) to ***modem(connects home network to internet)*** than to router(for wired/wireless devices)
-- It has special table called the 'Routing table' to tell router which path should packet choose by looking at it's header destination(If path's not avaliable or too busy, choose another one)
-
-### Wireless Access Point(sub-device)
-- Internet -> Modem -> Router -> Wireless AP(Does not have WAN port while router have, thus it needs router)
-- Theoritically, can just use wi-fi router but it's harder to manage. AP is much easier to manage.
-- Does not have firewall and DHCP service(assign different IP address to devices) compare to router
-
-### Reliability
-
-- Internet in simplified version is a structure have many router(distributed structure) connected with one another to communicate and connects all LANs in the world.
-- If entire of the load is given to the single point, it's 'Single Point of Failure'
-- Underwater cables that plays important part of the internet today(Intercontinental connections)
-- Different servers to communicate around the world
-
-### Wide Area Network(WAN)
-
-- For companies which need to communicate as if it's like LAN(Same environment) from different places covers huge areas like cities/countries/continents, they need WAN with encapsulation+encryption
-- Why? Because internet is a public network and everyone owns it. Hackers could tapered the packet on the internet easily as it could be seen or modified
-- VPN provides tunneling feature(High-security end-to-end-encryption communication between two locations) to provide privacy, anonymity and security on the internet.
-
-### Security protocols - Secure Sockets Layer(SSL) & TLS ***(Covers more on security)***
-
-- The sercure lock signals that third parties won't be able to read any information was sent or receive. 
-- Under the hood, SSL accomplishes that by transforming your data into a coded message that only the recipient knows how to decipher. 
-- A third party will only see a random string of characters, not the actual contents of emails, credit card numbers, or other private information.
-
-### Cloud
-
-- By storing files on servers and delivering software over the internet, cloud computing provides users with a simpler, more reliable computing experience. 
-- Cloud computing allows consumers and businesses to treat computing as a utility, leaving the technical details to technology companies.
-
-### How does wireless internet work?
-
-- Wifi networks uses electromagnetic frequencies that are available for devices to send and receive data.
-- To prevent other networks from interfering with each other, there are strict limits on the power (and therefore the range) of wifi networks.
-- Devices have a wireless adapter built into them. The wireless adapter is a component in the hardware referred to as a WiFi card. 
-- The WiFi card picks up on the radio frequencies allowing the devices to connect to wireless internet.
-
-### Internet Service Provider(ISP)
-
-- Each ISP(Imagine inside, it have many routers) is responsible for specific routers. There are 3 types:
-    - Local ISP (Think of it as connect neighbourhoods/small areas)
-    - Regional ISP (Connect different cities within the same country)
-    - Global ISP (Connects Different countries, it's the internet backbone with internet exchange point to work synchronously)
-
-- Network of a Country => Local ISPs + Regional ISPs
-
-- There's hierarchy for ISP communications, no local ISP is link to another. E.g. Local -> Regional -> Another Local
-- There can be special cases where global ISP is connected to local but it has to be:
-    1. Suitable location
-    2. Extra cost to build an infrastructure to direct connection
-- Each router in Regional will makes a choice, to determines which global isp the packet(can take different routes) will be sent. 
-- Charge a certain fee for these services
-- Point of presence(POP)/paths is an access point, or physical location at which two or more networks or communication devices share a connection
- - Acts like internet exchange points with routers, switches, servers, and other devices necessary for traffic to cross over networks are all present at PoPs
-
-- Large companies want to communicate with customers in the fastest and most efficient way. Using:
-    1. Distributed server
-    2. Peering (Could connect almost direct connection with the users. Security will be better as due to direct connection, the packet passes through much less POP)
+![alt text](../images/AJAX.png)
 
 ---
 
-#### Some basic questions I would ask myself:
+## Server
 
-1. What is an IP address, a domain name and DNS?
-2. How does the internet works as a whole?
-3. Understanding of clients and servers, how they interact using request/response cycle?
+![alt text](../images/part2.jpg)
 
 ---
 
-#### TCP and UDP
+# Network Protocol Layers (Top to Bottom Encapsulate, then bottom to top for decapsulate)
+### Simple Table(TCP as example), can be either called TCP/IP Models or UDP/IP Models
 
-[Differences 1](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)    
-[Differences 2](https://www.lifesize.com/en/blog/tcp-vs-udp/#:~:text=TCP%20is%20a%20connection%2Doriented,is%20only%20possible%20with%20TCP)  
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th>OSI</th>
+            <th>TCP/IP</th>
+            <th>Protocol Data Unit</th>
+            <th>Devices</th>
+            <th>IP Suite</th>
+            <th>Function (Encapsulation Summerise)</th>
+            <th>Function (Decapsulation Summerise)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>7</td>
+            <td rowspan=3>Application Layer Protocols</td>
+            <td rowspan=3>Data</td>
+            <td rowspan=3>Layer 7 Firewall</td>
+            <td rowspan=3>HTTP, DNS, FTP, SSH, TLS/SSL, DHCP</td>
+            <td rowspan=3>Client generates HTTP request to server</td>
+            <td rowspan=3>Server receive client request and make a response to it</td>
+        </tr>
+        <tr>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Transport Layer Protocols</td>
+            <td>Segment</td>
+            <td>Layer 4 Firewall</td>
+            <td>TCP, UDP</td>
+            <td>TCP chops the request into small packets, giving seach one sequence number and checksum</td>
+            <td>TCP checks each packet that it received corrently(Checksum) and when all have arrived, combines all in the correct order</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Internet Layer Protocols</td>
+            <td>Packets</td>
+            <td>Router / Wireless Router</td>
+            <td>IPv4, IPv6</td>
+            <td>Packet switching, where these packets are sent to IP address</td>
+            <td>Check IP address to ensure that the pack is delivered to the correct destination</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td rowspan=2>Network(Link) Access  Layer Protocols</td>
+            <td>Frames</td>
+            <td rowspan=2>Switch / Wireless Access point</td>
+            <td rowspan=2>Ethernet</td>
+            <td rowspan=2>Binary data makes up each packet are sent as signals. 1. electrical[Copper/Lan cable] 2. radio[Air/Vacuum 3. light[Optical fiber] to next item of network hardware </td>
+            <td rowspan=2>Signals received are converted into binary data that makes up each packet</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Bits</td>
+        </tr>
+    </tbody>
+</table>
+
+- Network communication splitted into 'layers' with different protocols on each layer
+- Each layer is self-contained and only needs to know how to interface with the layer above and below it
+
+---
+### TCP(Connection-oriented transport) and UDP(Connectionless transport)
+
+<table style="text-align: center;">
+    <thead>
+        <tr>
+            <th>Features</th>
+            <th>TCP</th>
+            <th>UDP</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Connection</td>
+            <td>Connection-oriented protocol. Communicating devices should establish a connection (3-way handshakes with SYN and ACK) before transmitting data and should close the connection after transmitting the data (4-way handshakes with FIN and ACK).</td>
+            <td>Connectionless protocol. No establish of for opening a connection, maintaining a connection, and terminating a connection for data transfer. No handshakes.</td>
+        </tr>
+        <tr>
+            <td>Segmentation</td>
+            <td>Support Segmentation, highly reliable and packets arrive in order</td>
+            <td>Does not support Segmentation, not reliable and packets arrive out of order</td>
+        </tr>
+        <tr>
+            <td>Error checking?</td>
+            <td>Provides flow control and acknowledgment of data. When delivery does not get ACK for an amount of time, it'll do retransmission of lost packets</td>
+            <td>Lacks error checking(basic error checking of checksums only) and correction, no congestion control</td>
+        </tr>
+        <tr>
+            <td>Speed/Weight</td>
+            <td>Slow / 20 Bytes</td>
+            <td>Fast / 8 Bytes</td>
+        </tr>
+        <tr>
+            <td>Use Cases?</td>
+            <td>Email, texting, Web, SSH, file transfers</td>
+            <td>DNS, DHCP ,Computer gaming, voice/video communication, live conferences, streaming</td>
+        </tr>
+        <tr>
+            <td>Why?</td>
+            <td>
+                <ul>
+                    <li>Data loss can't be tolerated and in-order delivery is needed</li>
+                    <li>Delivery Acknowledgements needed</li>
+                    <li>Security(handshakes)</li>
+                </ul>
+            </td>
+            <td>
+                <ul>
+                    <li>Data loss can be masked - few small bytes</li>
+                    <li>Less overhead(fast) and delay is undesirable which doesn't deteriorate performance</li>
+                    <li>Data loss can be masked - few small bytes</li>
+                    <li>Small transactions like DNS lookups.</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+##### Fun facts:
+- I’ve got a really good UDP joke to tell you, but I don’t know if you’ll ever get it or not...=(
+- Good teachers uses TCP (get to know each other before I give you my input), but most students/bad teachers uses UDP (take my input and like it!)
+
+---
+
+### Links
+
+[xml and ajax related](https://www.w3schools.com/xml/default.asp)  
+[Application, Transport, Internet and Link Layers](https://www.vskills.in/certification/tutorial/application-transport-internet-and-network-access-layer/)
+[Network Protocol Layers explained by example](https://www.youtube.com/watch?v=a6bH2kKZkAc)
+[TCP IP Model Explained | TechTerms](https://www.youtube.com/watch?v=2QGgEk20RXM)
+[Each layer of the OSI model and TCP/IP explained](https://www.youtube.com/watch?v=kCuyS7ihr_E)
+[geeksforgeeks.org](https://www.geeksforgeeks.org/differences-between-tcp-and-udp/)
+[UDP and TCP: Comparison of Transport Protocols](https://www.youtube.com/watch?v=Vdc8TCESIg8)
