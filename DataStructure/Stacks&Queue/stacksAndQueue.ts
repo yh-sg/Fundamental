@@ -49,6 +49,7 @@ class Stack<T> implements IStack<T>{
             this.top=newNode;
         }
         this.length++;
+        return;
     }
     pop(): void {
         if(!this.bottom||!this.top)
@@ -56,6 +57,7 @@ class Stack<T> implements IStack<T>{
         if(this.length===1){
             this.top=null;
             this.bottom=null;
+            this.length--;
             return;
         }
         //Create a getter to get the node before top
@@ -68,6 +70,7 @@ class Stack<T> implements IStack<T>{
         currentNode.next=null;
         this.top=currentNode;
         this.length--;
+        return;
     }
 }
 
@@ -131,6 +134,7 @@ class Queue<T> implements IQueue<T>{
             this.last=newNode;
         }
         this.length++;
+        return;
     }
     dequeue(): void {
         if(!this.first||!this.last)
@@ -138,12 +142,15 @@ class Queue<T> implements IQueue<T>{
         if(this.length===1){
             this.first=null;
             this.last=null;
+            this.length--;
             return;
         }
         //Create the after first node, remove the first
         let currentNode=this.first.next;
         this.first.next=null;
         this.first=currentNode;
+        this.length--;
+        return;
     }
 }
 
