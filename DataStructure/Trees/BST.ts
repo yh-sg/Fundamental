@@ -1,7 +1,7 @@
 interface IBinarySearchTree{
     insert(val:number):void
     lookup(val:number):TreeNode|undefined
-    remove(val:number):TreeNode|undefined
+    remove(val:number):void
 }
 
 class TreeNode{
@@ -81,22 +81,68 @@ class BinarySearchTreePractice implements IBinarySearchTree{
         }// compare the node value, if larger goes right, otherwise goes left and continue until it reaches null
 
     }
-    remove(val: number): TreeNode|undefined {
-        //!Comments
+    remove(val: number): void {
 
-        // if only one node, remove that. -> Result 1
-        // throw error if empty tree -> Result 2
-        // Affected nodes: prevNode, removedNode, currentNode(Swapping value and remove linkage)
-        // Find removedNode, if cannot find throw error
+        if(this.root&&!this.root.left&&!this.root.right&&this.root.val===val){
+            this.root=null;
+            return;
+         } // if only one node, remove that.
+
+        if(!this.root) throw new Error("It's an empty tree."); // throw error if empty tree
+
+        //Affected nodes: prevNode, removedNode, currentNode(Swapping value and remove linkage)
+        let removedNode = this.root,
+            prevNode,
+            currentNode;
+
+        while(removedNode){
+            if(val<removedNode.val){
+                prevNode=removedNode;
+                removedNode=removedNode.left!;
+            }else if(val===removedNode.val){
+                break;
+            }else{
+                prevNode=removedNode;
+                removedNode=removedNode.right!;
+            }
+        }
+
+        if(!removedNode) throw new Error("Unable to find delete node!"); //founded node, if cannot find throw error
+
         // Removed node must always find the higher value first, which is on the right
-        // Right side and left side got nothing, destory the previous node linkage -> Result 3
-        // left side got something and right side got nothing, remove the linkage of previous node -> Result 4
-        // Otherwise, move to right side
-        // If left side got nothing, replace the val and destory the removedNode linkage -> Result 5
-        // Result 4: go left and if there's left node, keep on looping until the end.
-        // replace the value with removedNode and remove it's linkage -> Result 6
+        if(!removedNode.right&&!removedNode.left){
+            (!prevNode.left || removedNode.val === prevNode.left.val)  ?  prevNode.left = null : prevNode.right = null;
+            return;
+        }// Result 1: right side and left side got nothing, destory the previous node linkage 
+        
+        if(!removedNode.right&&removedNode.left){
+            //handle root node
+            if(removedNode===this.root){
+                this.root=removedNode.left
+                removedNode.left=null
+            }else
+                prevNode.left = removedNode.left
+            return;
+        }// Result 2: left side got something and right side got nothing, remove the linkage of previous node
 
-        throw new Error("Method not implemented.");
+        // move to right side
+        currentNode=removedNode.right
+        if(!currentNode.left){
+            removedNode.val=currentNode.val;
+            removedNode.right=null;
+            return
+        } // Result 3: if left side got nothing, replace the val and destory the removedNode linkage
+
+        // Result 4: go left and if there's left node, keep on looping until the end.replace the value with removedNode and remove it's linkage
+         while(currentNode){
+            if(!currentNode.left) break;
+            prevNode=currentNode;
+            currentNode=currentNode.left;
+         }
+         removedNode.val=currentNode.val;
+         prevNode.left=null;
+
+         return;
     }
 }
 
@@ -130,6 +176,14 @@ console.log(tree.lookup(170))
 console.log(tree.lookup(15))
 console.log(tree.lookup(1))
 console.log(tree.lookup(0))
+tree.remove(9)
+tree.remove(4)
+tree.remove(6)
+tree.remove(20)
+tree.remove(170)
+tree.remove(15)
+// tree.remove(1)
+
 
 console.log(JSON.stringify(traverse(tree.root!)))
 
