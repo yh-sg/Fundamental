@@ -54,5 +54,48 @@ The basic operations that can be performed on a binary search tree data structur
 - No O(1) operations
 ```
 
+---
+
+## Binary Heap
+
+There're min-heap and max-heap. Unlike binary search tree, left and right doesn't have meaning as long as they are lesser/greater than the top.
+
+Why Binary heap? 
+- Maximum or Minimum Element: O(1)
+- For Max heap, parent nodes are always larger than child nodes. Largest value on the root node
+- For Min heap, parent nodes are always smaller than child nodes. Smallest value on the root node
+
+### Performance
+
+<table>
+    <tbody>
+        <tr>
+            <td>Insert</td>
+            <td>O(log n)</td>
+        </tr>
+        <tr>
+            <td>Delete</td>
+            <td>O(log n)</td>
+        </tr>
+        <tr>
+            <td>Lookup</td>
+            <td>O(n)</td>
+        </tr>
+    </tbody>
+</table>
+
+## Pros and Cons
+```diff
++ Better than O(n)
++ Priority(Priority queue)
++ Flexible Size
++ Fast Insert
+- Slow Lookup
+```
+
+---
+
+Trie?
+
 ## Links
 [Delete Node in a BST](https://leetcode.com/problems/delete-node-in-a-bst/)
