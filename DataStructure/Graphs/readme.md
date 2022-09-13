@@ -6,3 +6,8 @@ Graph consist of vertex(node) and edge(connections)
 - Directed vs Undirected
 - Unweighted vs Weighted
 - Cyclic(Circular) vs Acyclic
+
+```diff
++ Relationship
+- Scaling
+```
