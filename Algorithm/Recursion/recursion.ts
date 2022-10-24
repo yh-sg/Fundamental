@@ -1,24 +1,27 @@
 const findFactorialIterative = (num:number):number => {
+    if(num<=0)
+        throw new Error("Number cannot be lesser than 1");
+        
     let result = 1;
-    numberValidator(num);
+
     for (let i = num; i > 0; i--) {
         result *= i; 
     }
+    
     return result;
 }
 
 const findFactorialRecursive = (num:number):number => {
     // 1. Identify the base case
-    numberValidator(num);
-    let base = num,
-        count = num;
+    if(num<=0)
+        throw new Error("Number cannot be lesser than 1");
 
-    if(count===1)
-        return base;
+    if(num===1)
+        return num;
 
     // 2. Identify the recursive case
     // 3. Get closer and closer and return. 
-    return base *= findFactorialRecursive(count-1);
+    return num * findFactorialRecursive(num-1);
 }
 
 const fabonacciIterative = (num:number):number => {
@@ -42,27 +45,42 @@ const fabonacciRecursive = (num:number):number => {
     if(num<=0) return 0;
     if(num===1 || num===2) return 1;
 
-    let result = 1;
     // 2. Identify the recursive case
     // 3. Get closer and closer and return. 
 
-    return result = fabonacciRecursive(num-1) + fabonacciRecursive(num-2);
+    return fabonacciRecursive(num-1) + fabonacciRecursive(num-2);
 }
 
-const numberValidator = (num:number):void => {
-    if(num<=0)
-        throw new Error("Number cannot be lesser than 1");
-    return;
-}
-
-const countDownToZero = (num:number):void => {
-    return;
+const countDownToZero = (num:number):number => {
+    if(num<=0) return num;
+    return countDownToZero(num-1);
 }
 
 const reverseStr = (str:string):string => {
-    return "";
+    if(str.length===1) return str;
+    return reverseStr(str.slice(1)) + str[0];
 }
 
 const isPalindrome = (str:string):boolean =>{
+    if(str.length<=1) return false;
+    if(str.length===2) return true;
+    if(str[0]===str[str.length-1]) return isPalindrome(str.slice(1,-1));
+
     return false;
+}
+
+const allCoinFlipPossibilities = (num:number):string[] => {
+    if(num<=0)
+        throw new Error("Number cannot be lesser than 1");
+    const results:string[] = [];
+    function recursiveCoinFlips(stem=""){
+        if(stem.length ===  num){
+            results.push(stem);
+        }else{
+            recursiveCoinFlips(stem+"H");
+            recursiveCoinFlips(stem+"T");
+        }
+    }
+    recursiveCoinFlips();
+    return results;
 }

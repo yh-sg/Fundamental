@@ -20,3 +20,13 @@ If it demands more memory than is available in the call stack, a stack overflow 
 ##### How does it occur?
 
 Recursion(Where function is called too many times) or too much data is assigned to the variables in the stack frame like array variables. If there's no logic to prevent excess data from being written array variable, it will cause stack overflow.
+
+## Recursive VS Iterative
+
+Anything you do with a recursion CAN be done iteratively (loop)
+
+```diff
++ DRY
++ Readability
+- Large Stack
+```
