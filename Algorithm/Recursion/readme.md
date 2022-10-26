@@ -25,6 +25,8 @@ Recursion(Where function is called too many times) or too much data is assigned 
 
 Anything you do with a recursion CAN be done iteratively (loop)
 
+But recursion and space complexity might come with a big cost. Complex situation like 'Merge Sort', 'Quick Sort', 'Tree Traversal', 'Graph Traverrsal' would be better compare to iteratively. 
+
 ```diff
 + DRY
 + Readability
