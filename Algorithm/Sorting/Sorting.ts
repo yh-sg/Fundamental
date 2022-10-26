@@ -17,7 +17,7 @@ const bubbleSort = (arr:number[]):number[] => {
 }
 
 const selectionSort = (arr:number[]):number[] => {
-    //selection sort, loop through and find the smallest one. It doesn't need to swap until it scans through all the elements.
+    //oop through and find the smallest one. It doesn't need to swap until it scans through all the elements.
     for (let i = 0; i < arr.length; i++) {
         let smallestElement=arr[i],
             position=-1;
@@ -39,21 +39,33 @@ const selectionSort = (arr:number[]):number[] => {
 }
 
 const insertionSort = (arr:number[]):number[] => {
+    //loop through the arr, keep on swapping from the last until it is no longer smallest.
+    for (let i = 1; i < arr.length; i++) {
+        //loop through starting from the current element descending to first element, 
+        for (let j = i; j > 0; j--) {
+            if(arr[j]<arr[j-1]){
+                let temp=arr[j];
+                arr[j]=arr[j-1]
+                arr[j-1]=temp;
+            }else
+                break; //if no longer smaller, don't swap, break it.
+        }
+    }
+
+    return arr;
+}
+
+const quickSort = (arr:number[]):number[] => {
     //TODO(27/10)
     
     return arr;
 }
 
-const quickSort = (arr:number[]):number[] => {
+const mergeSort = (arr:number[]):number[] => {
     //TODO(28/10)
     
     return arr;
 }
 
-const mergeSort = (arr:number[]):number[] => {
-    //TODO(29/10)
-    
-    return arr;
-}
-
 console.log(bubbleSort(arr));
+console.log(selectionSort(arr));
