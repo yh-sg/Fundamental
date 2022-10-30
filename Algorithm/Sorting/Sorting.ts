@@ -47,8 +47,7 @@ const insertionSort = (arr:number[]):number[] => {
                 let temp=arr[j];
                 arr[j]=arr[j-1]
                 arr[j-1]=temp;
-            }else
-                break; //if no longer smaller, don't swap, break it.
+            }else break; //if no longer smaller, don't swap, break it.
         }
     }
 
@@ -62,10 +61,27 @@ const quickSort = (arr:number[]):number[] => {
 }
 
 const mergeSort = (arr:number[]):number[] => {
-    //TODO(28/10)
+    //First thing first, this algorithm is tough, require to break into two parts. Part one is to do the comparison helper function.
     
     return arr;
 }
 
-console.log(bubbleSort(arr));
-console.log(selectionSort(arr));
+//Part one, create a helper function to compare two arrays already sorted arrays.
+//! This won't work if either side were not sorted.
+let leftArr = [1,9,22],
+    rightArr = [2,3,10,11];
+
+const mergeTwoArr = (left:number[], right:number[]):number[] => {
+
+    let result:number[] = [];
+
+    //If there's still number in either left/right, keep on comparing until one side no longer have any element
+    while(left.length || right.length){
+        left[0] < right[0] ? result.push(left.shift()!) : result.push(right.shift()!);
+    }
+
+    //Not sure which elemtns left, so just concat the remaining elements.
+    return result.concat(left).concat(right);
+}
+
+console.log(mergeTwoArr(leftArr,rightArr));
