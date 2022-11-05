@@ -54,12 +54,6 @@ const insertionSort = (arr:number[]):number[] => {
     return arr;
 }
 
-const quickSort = (arr:number[]):number[] => {
-    //TODO(27/10)
-    
-    return arr;
-}
-
 const mergeSort = (arr:number[]):number[] => {
     //First thing first, this algorithm is tough, require to break into two parts. Part one is to do the comparison helper function.
     
@@ -126,3 +120,28 @@ const mergeTwoArr = (left:number[], right:number[]):number[] => {
     //Not sure which elements left, so just concat the remaining elements.
     return result.concat(left).concat(right);
 }
+
+
+const quickSort = (arr:number[]):number[] => {
+    //Requires Pivot to be in the middle, keep on breaking down by moving lower numbers to left side with higher to right side.
+    //This method uses last element as pivot
+    let pivot:number = arr[arr.length-1],
+        left:number[] = [],
+        right:number[] = [];
+    
+    //Recursion base case for quick sort
+    if(arr.length===2) return arr[0] < arr[1] ? arr : [arr[1],arr[0]];
+    if(arr.length<=1) return arr;
+
+    //Do not include the last element which is pivot, otherwise stackoverflow error
+    for (let i = 0; i < arr.length-1; i++) {
+        pivot < arr[i] ? right.push(arr[i]) : left.push(arr[i])
+    }
+        
+    return quickSort(left).concat(pivot).concat(quickSort(right));
+}
+
+// 0. quickSort([6,5,3,1,8,7,2,4]) -> Starting 
+// 1. return quickSort([3,1,2]).concat(4).concat(quickSort([6,5,8,7])) -> first call 
+// 2. return quickSort([1]).concat(2).concat(quickSort([3])).concat(4).concat(quickSort([6,5]).concat(7).concat(quickSort([8]))) -> second call 
+// 3. return [1,2,3,4].concat([5,6]).concat[7].concat[8] -> [1,2,3,4,5,6,7,8] -> Ends
