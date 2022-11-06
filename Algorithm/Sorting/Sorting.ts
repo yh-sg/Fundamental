@@ -3,6 +3,7 @@ let arr = [6,5,3,1,8,7,2,4];
 const bubbleSort = (arr:number[]):number[] => {
     //bubble up to last location, so work from first element to last element, bringing the largest to last
     for (let i = 0; i < arr.length; i++) {
+        let noSwap = true; // optimization
         //keep on comparing the first(j) element and next element(j+1). Do not touch elements that are already bubbled up(arr.length-i).
         for (let j = 0; j < arr.length-i; j++) {
             //If greater than next element, swap.
@@ -10,8 +11,10 @@ const bubbleSort = (arr:number[]):number[] => {
                 let temp=arr[j];
                 arr[j]=arr[j+1]
                 arr[j+1]=temp;
+                noSwap = false;
             }
         }
+        if(noSwap) break;
     }
     return arr;
 }

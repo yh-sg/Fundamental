@@ -1,70 +1,118 @@
 # Sorting
 
 ## Bubble Sort
-- Using **optimized approach**. it can detect already sorted array in first pass with time complexity of O(N)
-- Unless know the data is fairly sorted, this should be avoided, bubbles up.
+- Bubble sort repeatedly swapping the adjacent elements, biggest to the last element.
+- Use Case: Nothing much, for studying purpose. Not suitable for large data sets and ***can be optimized when data is fairly sorted***.
 - Time Complexity:
-    - Best: O(N)
-    - Average: O(n^2)
-    - Worst: O(n^2)
+    <table>
+        <tbody>
+            <tr>
+                <td>Best</td>
+                <td>O(n) - Super Rare / O(n^2) Usually</td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td>O(n^2)</td>
+            </tr>
+            <tr>
+                <td>Worst</td>
+                <td>O(n^2)</td>
+            </tr>
+        </tbody>
+    </table>
 - Space Complexity:
     - O(1)
-
----
 ## Selection Sort
-- Simplest sorting approach. Find the smallest of all the elements and swap it from the position.
-- No best case scenario
+
+- Simplest sorting approach. Find the smallest of all the elements and swap it to the first position from the position.
+- Use Case: Nothing much, for studying purpose. No optimization.
 - Time Complexity:
-    - All case: O(n^2)
+    <table>
+        <tbody>
+            <tr>
+                <td>All Cases</td>
+                <td>O(n^2)</td>
+            </tr>
+        </tbody>
+    </table>
 - Space Complexity:
     - O(1)
 
----
 ## Insertion Sort
----
-- The array is virtually split into a sorted and an unsorted part.
-- Values from the unsorted part are picked and placed at the correct position in the sorted part.
-- For small data values, insertion sort performs efficiently.
+
+- The array is virtually split into a sorted and an unsorted part. E.g. Left side sorted, right side not sorted. Values from the unsorted part are picked and placed at the correct position in the sorted part. 
+- Use case : ***Small data values***, insertion sort performs efficiently.
 - Time Complexity:
-    - Best: O(N)
-    - Average: O(n^2)
-    - Worst: O(n^2)
+    <table>
+        <tbody>
+            <tr>
+                <td>Best</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td>O(n^2)</td>
+            </tr>
+            <tr>
+                <td>Worst</td>
+                <td>O(n^2)</td>
+            </tr>
+        </tbody>
+    </table>
 - Space Complexity:
     - O(1)
 
----
+## [Stable vs Unstable sort](https://stackoverflow.com/questions/1517793/what-is-stability-in-sorting-algorithms-and-why-is-it-important)
+- A stable sorting algorithm is the one that sorts the identical elements in their same order as they appear in the input, whilst unstable sorting may not satisfy the case. 
 
 ## Merge Sort
----
-- Divide and conquer algorithm, continously divides the array into 2 halves.
-- Using helper function, recurses on both left and right subarrays and merges the two sorted halves.
-- Stable?: **Yes**
+
+- Divide and conquer algorithm, continously divides the array into 2 halves. Using helper function, recurses on both left and right subarrays and merges the two sorted halves.
+- Use case: Large to super duper large datasets. Compare to quicksort, it's a stable algorithm. However, in average cases it's slower and takes up more memory.
 - Time Complexity:
-    - All case: O(nlog(n))
-        - O(log(n)) during decompositions E.g. 8 element require 2^3 splits, 32 require 2^5.
-        - O(n) comparisons during final merging 
+    <table>
+        <tbody>
+            <tr>
+                <td>All Cases</td>
+                <td>O(n log(n))</td>
+            </tr>
+        </tbody>
+    </table>
 - Space Complexity:
     - O(n)
 
----
 ## Quick Sort
----
+
 - Divide and conquer algorithm, using **pivot**. Can be:
     1. First/last element as pivotor 
     2. Sum all and average it, find the median as pivot
     3. Let random element as pivot
-- The key is partition. Put smaller infront of pivot and bigger behind.
-- Stable?: **No**
+    - However, picking the smallest/largest element could spell **disaster**, leading to worst case scenario.
+- Use case: Medium to Large dataset. Compare to mergesort, it's an unstable algorithm. In average cases it's faster and furthermore it takes up lesser memory which is a big plus.
 - Time Complexity:
-    - Best: O(nlog(n))
-    - Average: O(nlog(n))
-    - Worst: O(n^2)
-        - O(log(n)) / O(n) decompositions 
-        - E.g. Sorted array using first as pivot causing O(n)
+    <table>
+        <tbody>
+            <tr>
+                <td>Best</td>
+                <td>O(n log(n))</td>
+            </tr>
+            <tr>
+                <td>Average</td>
+                <td>O(n log(n))</td>
+            </tr>
+            <tr>
+                <td>Worst</td>
+                <td>O(n^2)</td>
+            </tr>
+        </tbody>
+    </table>
 - Space Complexity:
-    - O(n)
+    - O(log(n))
 
 ## Raxis/Counting/Heap Sort
+
+
+
 ### Sorting Exercise
 
 1. Sort 10 schools around your house by distance:
@@ -79,7 +127,7 @@
     <p>
 
     ```java
-    "Bubble Sort"
+    Bubble Sort / Selection Sort
     ```
 
     </p>
