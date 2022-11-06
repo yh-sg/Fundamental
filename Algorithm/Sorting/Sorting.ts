@@ -67,7 +67,7 @@ const mergeSort = (arr:number[]):number[] => {
     return mergeTwoArr(left,right); // this thing will keep call mergeSort until it left with base case on both side then execute, afterwards it will execute the result given from base case and onwards.
 
     // 0. mergeSort([6,5,3,1,8,7,2,4]) -> Starting 
-    // 1. mergeSort([6,5,3,1]) -> Part 1
+    // 1. left = mergeSort([6,5,3,1]) -> Part 1
     // 2. mergeSort([6,5])
     // 3. mergeSort([6])
     // 4. return [6]
@@ -82,7 +82,7 @@ const mergeSort = (arr:number[]):number[] => {
     // 13. mergeTwoArr([3],[1]) -> [1,3]
     // 14. mergeTwoArr([5,6],[1,3]) -> looks like this mergeTwoArr(mergeTwoArr([6],[5]),mergeTwoArr([3],[1])) -> [1,3,5,6] Part 1 ends
     /**********************************************************************************************************************************************/
-    // 1. mergeSort([8,7,2,4]) -> Part 2
+    // 1. right = mergeSort([8,7,2,4]) -> Part 2
     // 2. mergeSort([8,7])
     // 3. mergeSort([8])
     // 4. return [8]
@@ -145,3 +145,11 @@ const quickSort = (arr:number[]):number[] => {
 // 1. return quickSort([3,1,2]).concat(4).concat(quickSort([6,5,8,7])) -> first call 
 // 2. return quickSort([1]).concat(2).concat(quickSort([3])).concat(4).concat(quickSort([6,5]).concat(7).concat(quickSort([8]))) -> second call 
 // 3. return [1,2,3,4].concat([5,6]).concat[7].concat[8] -> [1,2,3,4,5,6,7,8] -> Ends
+
+//Call Stack
+//continue...
+//return concat(1).concat(2).concat(3).concat(4).concat(quickSort([6,5,8,7]));
+//return quickSort([3]) -> 3
+//return quickSort([1]) -> 1
+//return quickSort([1]).concat(2).concat(quickSort([3])); 
+//return quickSort([3,1,2]).concat(4).concat(quickSort([6,5,8,7]));
