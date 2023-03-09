@@ -17,6 +17,63 @@ The basic operations that can be performed on a binary search tree data structur
 - Inorder Traversal − Traverses a tree in an in-order manner.
 - Postorder Traversal − Traverses a tree in a post-order manner.
 
+## Pros and Cons
+```diff
++ Better than O(n)
++ Priority(Priority queue)
++ Flexible Size
++ Fast Insert
+- Slow Lookup
+```
+
+## BFS/DFS
+
+- BFS
+    - Each level(Root/Level 1, level 2, etc) from Left to Right traversal
+    - Pros and Cons
+        ```diff
+        + Shortest Path
+        + Closer Nodes
+        - More Memory
+        ```
+- DFS
+    - Goes down deep from left the goes back and search if still got path or not.
+    - Pros and Cons
+        ```diff
+        + Less Memory
+        + Check does path exist
+        - Slow
+        ```
+
+### BFS/DFS Quiz
+
+<details> 
+  <summary>If you know a solution is not far from the root of the tree: </summary>
+   BFS
+</details>
+<details> 
+  <summary>If the tree is very deep and solutions are rare</summary>
+   BFS (DFS will take long time.)
+</details>
+<details> 
+  <summary>If the tree is very wide: </summary>
+   DFS (BFS will need too much memory)
+</details>
+<details> 
+  <summary>If solutions are frequent but located deep in the tree </summary>
+   DFS
+</details>
+<details> 
+  <summary>determining whether a path exists between two nodes </summary>
+   DFS
+</details>
+<details> 
+  <summary>Finding the shortest path </summary>
+   BFS
+</details>
+
+<br/>
+
 ### Performance
 
 <table>
@@ -83,15 +140,6 @@ Why Binary heap?
         </tr>
     </tbody>
 </table>
-
-## Pros and Cons
-```diff
-+ Better than O(n)
-+ Priority(Priority queue)
-+ Flexible Size
-+ Fast Insert
-- Slow Lookup
-```
 
 ---
 
