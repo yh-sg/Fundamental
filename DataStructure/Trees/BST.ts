@@ -144,6 +144,23 @@ class BinarySearchTreePractice implements IBinarySearchTree{
 
          return;
     }
+
+    BFS():number[]{
+        let list:TreeNode[] = [], queue:TreeNode[] = [], currentNode = this.root;  //declare all necessary values, queue is use to keep track the level of the tree
+        
+        if(currentNode!==null) queue.push(currentNode);
+
+        while(queue.length){
+            //shift it to list, then check if this have left or right or not
+            currentNode = queue.shift()!;
+            list.push(currentNode)
+            //if have push them to queue and let the while loop goes on and on until no more remains
+            if(currentNode.left) queue.push(currentNode.left)
+            if(currentNode.right) queue.push(currentNode.right)
+        }
+        return list.map(e=>e.val);
+    }
+
 }
 
 interface NodeObject{
@@ -168,24 +185,26 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-console.log(tree.lookup(9))
-console.log(tree.lookup(4))
-console.log(tree.lookup(6))
-console.log(tree.lookup(20))
-console.log(tree.lookup(170))
-console.log(tree.lookup(15))
-console.log(tree.lookup(1))
-console.log(tree.lookup(0))
-tree.remove(9)
-tree.remove(4)
-tree.remove(6)
-tree.remove(20)
-tree.remove(170)
-tree.remove(15)
+// console.log(tree.lookup(9))
+// console.log(tree.lookup(4))
+// console.log(tree.lookup(6))
+// console.log(tree.lookup(20))
+// console.log(tree.lookup(170))
+// console.log(tree.lookup(15))
+// console.log(tree.lookup(1))
+// console.log(tree.lookup(0))
+// tree.remove(9)
+// tree.remove(4)
+// tree.remove(6)
+// tree.remove(20)
+// tree.remove(170)
+// tree.remove(15)
 // tree.remove(1)
+console.log(tree.BFS())
 
 
-console.log(JSON.stringify(traverse(tree.root!)))
+
+// console.log(JSON.stringify(traverse(tree.root!)))
 
 /* 
                 9
