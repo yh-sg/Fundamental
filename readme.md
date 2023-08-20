@@ -1,5 +1,8 @@
 # Fundamental
 
+Data Structure + Algorithm = Programs
+Class{} + function() = Programs
+
 ## Structure/Overview
 
 ```diff
