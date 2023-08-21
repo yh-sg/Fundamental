@@ -13,7 +13,7 @@ Rules:
 
 When CPU program tries to use more memory space in the call stack than has been allocated to the call stack that stores local function variables and return address data during program execution. 
 
-The call stack adheres to a (LIFO) memory queue architecture. When a function is called, the function's stack frame is added to the top of the call stack. The stack frame will remain in memory until the function is finished executing. The stack frame is then dropped from the stack, freeing up memory for other stack frames.
+The call stack adheres to a ***(LIFO) memory queue architecture***. When a function is called, the function's stack frame is added to the top of the call stack. The stack frame will remain in memory until the function is finished executing. The stack frame is then dropped from the stack, freeing up memory for other stack frames.
 
 If it demands more memory than is available in the call stack, a stack overflow occurs, which crashes the entire system.
 
